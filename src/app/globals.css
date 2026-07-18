@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Sistem desain "Pesisir Morella"
+  Palet diambil dari lanskap Maluku: laut dalam, pasir hangat,
+  hijau tropis, dan satu aksen terakota senja.
+*/
+@theme {
+  --color-ink: #12333b; /* biru laut dalam — teks utama & section gelap */
+  --color-ink-deep: #0b2228; /* laut paling dalam — footer */
+  --color-ivory: #fbf7ef; /* latar utama */
+  --color-sand: #f2e9d8; /* pasir hangat — latar section selang-seling */
+  --color-sand-deep: #e5d8bf; /* garis & border di atas pasir */
+  --color-palm: #46604f; /* hijau tropis redup — sekunder */
+  --color-sunset: #c4653a; /* SATU-SATUNYA aksen: CTA, harga, eyebrow */
+  --color-sunset-deep: #a0512c; /* hover aksen */
+  --color-mist: #64757a; /* teks sekunder di latar terang */
+  --color-foam: #f8f3e9cc;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-albert), ui-sans-serif, system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-sunset);
+  color: var(--color-ivory);
+}
+
+/* Fokus keyboard yang selalu terlihat, konsisten di semua elemen interaktif */
+:focus-visible {
+  outline: 2px solid var(--color-sunset);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Scroll reveal — elemen mulai tersembunyi, muncul saat masuk viewport.
+   State tersembunyi hanya berlaku bila JS aktif (kelas .js di <html>),
+   sehingga tanpa JS konten tetap terlihat. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.9s var(--ease-drift),
+    transform 0.9s var(--ease-drift);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Zoom foto pelan saat hover kartu */
+.img-drift {
+  transition: transform 1.2s var(--ease-drift);
+}
+@media (hover: hover) {
+  .group:hover .img-drift {
+    transform: scale(1.045);
+  }
 }
