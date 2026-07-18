@@ -8,14 +8,24 @@ import { Facilities } from "@/components/sections/facilities";
 import { Destinations } from "@/components/sections/destinations";
 import { Gallery } from "@/components/sections/gallery";
 import { Testimonials } from "@/components/sections/testimonials";
+import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Shafira Resort — Beach Resort in Morella, Central Maluku, Indonesia",
+    absolute: "Shafira Resort — Beach Resort in Ambon, Maluku, Indonesia",
   },
   description: siteEN.description,
+  keywords: [
+    "Shafira Resort",
+    "beach resort in Ambon",
+    "resort in Maluku Indonesia",
+    "where to stay in Ambon",
+    "Morella beach resort",
+    "glamping Ambon Indonesia",
+    "snorkeling Ambon",
+    "quiet beach Ambon Island",
+  ],
   alternates: {
     canonical: "/en",
     languages: { id: "/", en: "/en", "x-default": "/" },
@@ -24,16 +34,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: siteEN.name,
-    title:
-      "Shafira Resort — Beach Resort in Morella, Central Maluku, Indonesia",
+    title: "Shafira Resort — Beach Resort in Ambon, Maluku, Indonesia",
     description: siteEN.description,
     url: "/en",
-    images: [{ url: heroImage.src, width: 1200, height: 800 }],
+    images: [{ url: heroImage.src, width: 1600, height: 900 }],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Shafira Resort — Beach Resort in Morella, Central Maluku, Indonesia",
+    title: "Shafira Resort — Beach Resort in Ambon, Maluku, Indonesia",
     description: siteEN.description,
     images: [heroImage.src],
   },
@@ -49,6 +57,7 @@ export default function HomeEN() {
       <Destinations locale="en" />
       <Gallery locale="en" />
       <Testimonials locale="en" />
+      <Faq locale="en" />
       <Cta locale="en" />
     </>
   );

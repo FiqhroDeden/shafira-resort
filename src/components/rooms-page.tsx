@@ -10,10 +10,33 @@ import { WaIcon } from "@/components/wa-icon";
 /** Isi halaman detail akomodasi — dipakai /akomodasi (ID) dan /en/accommodation (EN). */
 export function RoomsPage({ locale = "id" }: { locale?: Locale }) {
   const t = copy[locale].roomsPage;
-  const { accommodations } = getContent(locale);
+  const { accommodations, site } = getContent(locale);
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: copy[locale].nav.home,
+        item: `${site.url}${copy[locale].paths.home === "/" ? "" : copy[locale].paths.home}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t.eyebrow,
+        item: `${site.url}${copy[locale].paths.rooms}`,
+      },
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Pembuka gelap agar header transparan tetap terbaca */}
       <section className="bg-ink pt-32 pb-16 text-ivory md:pt-44 md:pb-24">
         <div className="mx-auto max-w-7xl px-5 md:px-8">

@@ -6,6 +6,7 @@ import { Facilities } from "@/components/sections/facilities";
 import { Destinations } from "@/components/sections/destinations";
 import { Gallery } from "@/components/sections/gallery";
 import { Testimonials } from "@/components/sections/testimonials";
+import { Faq } from "@/components/sections/faq";
 import { Cta } from "@/components/sections/cta";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function Home() {
       <Destinations locale="id" />
       <Gallery locale="id" />
       <Testimonials locale="id" />
+      <Faq locale="id" />
       <Cta locale="id" />
     </>
   );

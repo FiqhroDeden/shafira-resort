@@ -18,6 +18,7 @@ import {
   type Accommodation,
   type Destination,
   type Facility,
+  type Faq,
   type SiteImage,
   type Testimonial,
 } from "./site";
@@ -26,9 +27,8 @@ export const siteEN = {
   ...site,
   tagline: "A quiet seaside stay on Memit Beach, Morella",
   description:
-    "Shafira Resort is a family beach resort on Memit Beach in Morella village, Central Maluku, Indonesia — about an hour's drive from Ambon. Stay in a villa, room, or beachfront glamping tent, with a free-use boat, gazebos, and the clear seas of Ambon's quiet north coast.",
-  // TODO: konfirmasi jam operasional (mengikuti site.ts)
-  hours: "Open daily, 8 AM–9 PM WIT (to be confirmed)",
+    "Shafira Resort is a family beach resort on Memit Beach in Morella village — a beach resort in Ambon, Maluku, Indonesia, about an hour's drive from Ambon city. Stay in a villa, room, or beachfront glamping tent, with a free-use boat, gazebos, snorkeling right off the beach, and sunsets over the quiet north coast of Ambon Island.",
+  hours: "Open 24 hours for staying guests",
   address: {
     beach: "Memit Beach",
     village: "Morella Village",
@@ -52,8 +52,7 @@ export const accommodationsEN: Accommodation[] = [
     tagline: "For families & groups",
     description:
       "The most spacious stay at Shafira Resort. A timber villa facing the sea with a generous shared living space — room enough for an extended-family weekend away from Ambon, or a group that wants to cook and grill right by the beach.",
-    // TODO: kapasitas asumsi (mengikuti site.ts)
-    capacity: "Up to 8 guests · 3 bedrooms",
+    capacity: "Up to 8 guests · 2 large bedrooms · private gazebo",
     features: [
       "Terrace facing the open sea",
       "Spacious living room for gathering",
@@ -63,7 +62,7 @@ export const accommodationsEN: Accommodation[] = [
     ],
     image: withAlt(
       vilaID.image,
-      "Timber villa by clear seas with coconut palms around it",
+      "Shafira Resort's Grand Villa — a timber villa with a warmly lit veranda at night",
     ),
     gallery: [
       withAlt(
@@ -194,7 +193,7 @@ export const destinationsEN: Destination[] = [
       "Morella's most famous snorkeling and diving spot. The water is glass-clear — fish swim right up to the entry steps on the shoreline.",
     image: withAlt(
       lubangBuayaID.image,
-      "Snorkeler among schools of fish in clear blue water",
+      "Colorful coral reef with schools of fish in the clear waters of Morella",
     ),
   },
   {
@@ -273,13 +272,13 @@ export const testimonialsEN: Testimonial[] = [
 
 export const heroImageEN: SiteImage = withAlt(
   heroImage,
-  "Tropical beach with clear water, a rocky shoreline, and a green hill",
+  "Shafira Resort's lilac overwater cottage on the clear emerald sea of Memit Beach, backed by Morella's forest",
 );
 
 export const introImagesEN = {
   portrait: withAlt(
     introImages.portrait,
-    "Coconut palm leaning over clear turquoise sea",
+    "Shafira Resort's purple wooden pier decorated with lanterns, with gazebos over clear seawater",
   ),
   landscape: withAlt(
     introImages.landscape,
@@ -289,14 +288,14 @@ export const introImagesEN = {
 
 export const ctaImageEN: SiteImage = withAlt(
   ctaImage,
-  "Golden sunset on a tropical beach lined with coconut palms",
+  "Orange sunset behind the pier and gazebo of Shafira Resort on Memit Beach, Morella",
 );
 
 const galleryAltsEN = [
   "Small clear waves washing over a sandy beach",
   "Traditional wooden boat floating on turquoise sea",
   "Wooden gazebo at the end of a pier facing the sea",
-  "Small fish swimming near a coral reef in sunlit water",
+  "Soft corals and small fish in the waters off Memit Beach",
   "Tropical beach with clear blue water and a rocky shoreline",
   "Silhouetted coconut palms against an orange evening sky",
 ];
@@ -304,3 +303,37 @@ const galleryAltsEN = [
 export const galleryImagesEN: SiteImage[] = galleryImages.map((img, i) =>
   withAlt(img, galleryAltsEN[i] ?? img.alt),
 );
+
+/* Jawaban FAQ versi Inggris — juga dipakai untuk schema FAQPage */
+export const faqsEN: Faq[] = [
+  {
+    question: "Where is Shafira Resort located?",
+    answer:
+      "Shafira Resort sits on Memit Beach in Morella village, Leihitu District, Central Maluku — on the north coast of Ambon Island, Indonesia. It is about a one-hour drive from downtown Ambon along the Leihitu coastal road. You can find the exact spot on Google Maps at -3.5119, 128.2344.",
+  },
+  {
+    question: "How much does it cost to stay at Shafira Resort?",
+    answer:
+      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms plus a private gazebo), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
+  },
+  {
+    question: "How do I book a room at Shafira Resort?",
+    answer:
+      "You book directly with the owner over WhatsApp at +62 852-4376-2626 — no middlemen and no booking platforms. Send your check-in dates, room type, and group size; the form on this website composes the message for you automatically.",
+  },
+  {
+    question: "Is Shafira Resort a good beach resort in Ambon for a quiet getaway?",
+    answer:
+      "Yes — that is exactly what it is built for. Unlike the busier tourist beaches, Memit Beach stays calm: all you hear is the waves, and the sunset is visible straight from your gazebo. If you are looking for a quiet beach resort in Ambon or a peaceful place to stay in Maluku, Morella's coast is hard to beat.",
+  },
+  {
+    question: "What can I do at Shafira Resort and nearby?",
+    answer:
+      "At the resort: swim in clear water, paddle the free-use boat, snorkel right off the beach, grill fish with the cooking kit provided, or simply settle into a gazebo. Nearby are the famous Lubang Buaya snorkeling spot (± 10 minutes), the Air Belanda spring, the hilltop Kapahaha Fortress, and the white sands of Liang Beach (Hunimua).",
+  },
+  {
+    question: "Is there internet at the resort?",
+    answer:
+      "Yes. Shafira Resort runs on Starlink satellite internet covering the whole property, so you can upload photos, take video calls, and even work remotely from a gazebo facing the sea.",
+  },
+];

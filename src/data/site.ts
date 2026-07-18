@@ -53,6 +53,11 @@ export type Testimonial = {
   origin: string;
 };
 
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
 /* ------------------------------------------------------------ */
 /*  IDENTITAS & KONTAK                                           */
 /* ------------------------------------------------------------ */
@@ -61,7 +66,7 @@ export const site = {
   name: "Shafira Resort",
   tagline: "Tepi laut yang tenang di Pantai Memit, Morella",
   description:
-    "Shafira Resort adalah resort pantai keluarga di Pantai Memit, Negeri Morella, Kecamatan Leihitu, Maluku Tengah — sekitar satu jam berkendara dari Kota Ambon. Menginap di vila, kamar, atau glamping tepat di tepi laut, dengan perahu, gazebo, dan laut jernih khas pesisir utara Pulau Ambon.",
+    "Shafira Resort adalah resort pantai keluarga di Pantai Memit, Negeri Morella, Kecamatan Leihitu, Maluku Tengah — resort tepi laut di pesisir utara Pulau Ambon, sekitar satu jam berkendara dari Kota Ambon. Menginap di vila, kamar, atau glamping tepat di bibir pantai, dengan perahu bebas pakai, gazebo, snorkeling, dan sunset — tempat healing yang tenang di Ambon, Maluku.",
   // TODO: ganti dengan domain asli setelah dibeli, mis. https://shafiraresort.com
   url: "https://shafira-resort.vercel.app",
   whatsapp: "6285243762626",
@@ -72,12 +77,11 @@ export const site = {
     regency: "Kabupaten Maluku Tengah",
     province: "Maluku",
   },
-  // TODO: konfirmasi jam operasional kantin/penerimaan tamu
-  hours: "Setiap hari, 08.00–21.00 WIT (TODO: konfirmasi)",
-  // TODO: isi username Instagram resort, mis. "shafiraresort.morella"
-  instagram: "",
-  // TODO: koordinat perkiraan area Morella — ganti dengan titik persis resort
-  geo: { lat: -3.5262, lng: 128.2129 },
+  hours: "Buka 24 jam untuk tamu menginap",
+  instagram: "resortsafiramemit",
+  /* Koordinat dari plus code F6QM+6QG (03°30′43″S 128°14′04″E) — situs lama resort */
+  geo: { lat: -3.5119, lng: 128.2344 },
+  mapsUrl: "https://maps.google.com/?q=-3.5119,128.2344",
   priceRange: "Rp350.000–Rp1.500.000",
 } as const;
 
@@ -93,8 +97,8 @@ export const accommodations: Accommodation[] = [
     tagline: "Untuk keluarga & rombongan",
     description:
       "Unit paling lega di Shafira Resort. Vila kayu berdiri menghadap laut dengan ruang berkumpul yang luas — cukup untuk keluarga besar yang datang dari Ambon untuk berakhir pekan, atau rombongan yang ingin masak dan bakar-bakar sendiri di tepi pantai.",
-    // TODO: asumsi — konfirmasi jumlah kamar & kapasitas maksimal
-    capacity: "Hingga 8 tamu · 3 kamar tidur",
+    // 2 kamar besar + 1 gazebo besar (sumber: situs lama resort); jumlah tamu masih asumsi
+    capacity: "Hingga 8 tamu · 2 kamar besar · gazebo privat",
     features: [
       "Teras menghadap langsung ke laut",
       "Ruang keluarga luas untuk berkumpul",
@@ -103,9 +107,9 @@ export const accommodations: Accommodation[] = [
       "Cocok untuk acara keluarga & arisan",
     ],
     image: {
-      src: "https://images.pexels.com/photos/9394297/pexels-photo-9394297.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Vila kayu di tepi laut jernih dengan pohon kelapa di sekitarnya",
-      credit: "Pexels — https://www.pexels.com/photo/9394297/",
+      src: "/photos/vila-besar-shafira-resort.jpg",
+      alt: "Vila Besar Shafira Resort — vila kayu dengan teras berlampu hangat di malam hari",
+      credit: "Foto asli Shafira Resort (Instagram @resortsafiramemit)",
     },
     gallery: [
       {
@@ -253,9 +257,9 @@ export const destinations: Destination[] = [
     description:
       "Spot snorkeling dan diving paling terkenal di Morella. Airnya sebening kaca — ikan berenang sampai ke tepian, bahkan terlihat dari atas tangga masuknya.",
     image: {
-      src: "https://images.pexels.com/photos/2404370/pexels-photo-2404370.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Orang snorkeling di antara ikan-ikan di laut biru jernih",
-      credit: "Pexels — https://www.pexels.com/photo/2404370/",
+      src: "/photos/snorkeling-terumbu-karang-morella.jpg",
+      alt: "Terumbu karang warna-warni dengan kawanan ikan di laut jernih Morella",
+      credit: "Foto asli Shafira Resort",
     },
   },
   {
@@ -337,20 +341,58 @@ export const testimonials: Testimonial[] = [
 ];
 
 /* ------------------------------------------------------------ */
+/*  TANYA JAWAB (FAQ)                                            */
+/*  Jawaban ini juga dipakai untuk schema FAQPage (SEO/AI).      */
+/* ------------------------------------------------------------ */
+
+export const faqs: Faq[] = [
+  {
+    question: "Di mana lokasi Shafira Resort?",
+    answer:
+      "Shafira Resort berada di Pantai Memit, Negeri Morella, Kecamatan Leihitu, Kabupaten Maluku Tengah — di pesisir utara Pulau Ambon. Dari pusat Kota Ambon jaraknya sekitar satu jam berkendara lewat jalur pesisir Leihitu. Titik persisnya bisa dibuka di Google Maps pada koordinat -3.5119, 128.2344.",
+  },
+  {
+    question: "Berapa harga menginap di Shafira Resort?",
+    answer:
+      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar plus gazebo privat), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
+  },
+  {
+    question: "Bagaimana cara memesan kamar di Shafira Resort?",
+    answer:
+      "Pemesanan langsung ke pemilik resort lewat WhatsApp di +62 852-4376-2626, tanpa perantara dan tanpa aplikasi booking. Cukup kirim tanggal check-in, tipe unit, dan jumlah tamu — formulir di situs ini bisa menyusunkan pesannya secara otomatis.",
+  },
+  {
+    question: "Apakah Shafira Resort cocok untuk tempat healing di Ambon?",
+    answer:
+      "Ya — banyak tamu datang justru untuk itu. Berbeda dari pantai wisata yang ramai, Pantai Memit tenang: yang terdengar hanya ombak, dan sunset terlihat langsung dari gazebo. Bagi yang mencari tempat healing di Ambon atau resort di Maluku yang jauh dari keramaian, resort pantai di Morella ini memang dibangun untuk memperlambat hari.",
+  },
+  {
+    question: "Apa saja yang bisa dilakukan di Shafira Resort dan sekitarnya?",
+    answer:
+      "Di dalam resort: berenang di laut jernih, mendayung perahu, snorkeling di depan pantai, bakar ikan dengan peralatan masak yang disediakan, atau bersantai di gazebo. Di sekitarnya ada spot snorkeling Pantai Lubang Buaya (± 10 menit), Mata Air Belanda, situs sejarah Benteng Kapahaha, dan Pantai Liang (Hunimua) yang terkenal.",
+  },
+  {
+    question: "Apakah ada sinyal internet di resort?",
+    answer:
+      "Ada. Shafira Resort memakai internet satelit Starlink yang menjangkau seluruh area resort, jadi tetap bisa mengirim foto, video call, bahkan kerja remote dari gazebo menghadap laut.",
+  },
+];
+
+/* ------------------------------------------------------------ */
 /*  GALERI & FOTO PENDUKUNG                                      */
 /* ------------------------------------------------------------ */
 
 export const heroImage: SiteImage = {
-  src: "https://images.pexels.com/photos/188014/pexels-photo-188014.jpeg?auto=compress&cs=tinysrgb&w=1920",
-  alt: "Pantai tropis berair jernih dengan garis pantai berbatu dan bukit hijau",
-  credit: "Pexels — https://www.pexels.com/photo/188014/",
+  src: "/photos/cottage-laut-shafira-resort-memit.jpg",
+  alt: "Cottage ungu Shafira Resort berdiri di atas laut jernih kehijauan Pantai Memit dengan latar hutan Morella",
+  credit: "Foto asli Shafira Resort",
 };
 
 export const introImages: { portrait: SiteImage; landscape: SiteImage } = {
   portrait: {
-    src: "https://images.pexels.com/photos/12811670/pexels-photo-12811670.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Pohon kelapa condong di atas laut biru kehijauan yang jernih",
-    credit: "Pexels — https://www.pexels.com/photo/12811670/",
+    src: "/photos/dermaga-shafira-resort-morella.jpg",
+    alt: "Dermaga kayu ungu Shafira Resort berhias lampion dengan gazebo di atas air laut jernih",
+    credit: "Foto asli Shafira Resort",
   },
   landscape: {
     src: "https://images.pexels.com/photos/9802332/pexels-photo-9802332.jpeg?auto=compress&cs=tinysrgb&w=1920",
@@ -360,9 +402,9 @@ export const introImages: { portrait: SiteImage; landscape: SiteImage } = {
 };
 
 export const ctaImage: SiteImage = {
-  src: "https://images.pexels.com/photos/9548239/pexels-photo-9548239.jpeg?auto=compress&cs=tinysrgb&w=1920",
-  alt: "Matahari terbenam keemasan di pantai tropis berjajar pohon kelapa",
-  credit: "Pexels — https://www.pexels.com/photo/9548239/",
+  src: "/photos/sunset-dermaga-pantai-memit.jpg",
+  alt: "Matahari terbenam jingga di balik dermaga dan gazebo Shafira Resort, Pantai Memit Morella",
+  credit: "Foto asli Shafira Resort",
 };
 
 export const galleryImages: SiteImage[] = [
@@ -382,9 +424,9 @@ export const galleryImages: SiteImage[] = [
     credit: "Pexels — https://www.pexels.com/photo/984291/",
   },
   {
-    src: "https://images.pexels.com/photos/3760999/pexels-photo-3760999.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Ikan-ikan kecil berenang di dekat terumbu karang dengan cahaya matahari menembus air",
-    credit: "Pexels — https://www.pexels.com/photo/3760999/",
+    src: "/photos/terumbu-karang-pantai-memit.jpg",
+    alt: "Terumbu karang lunak dan ikan-ikan kecil di perairan Pantai Memit",
+    credit: "Foto asli Shafira Resort",
   },
   {
     src: "https://images.pexels.com/photos/10218413/pexels-photo-10218413.jpeg?auto=compress&cs=tinysrgb&w=1920",

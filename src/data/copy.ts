@@ -20,7 +20,7 @@ export const copy = {
       mobileNavLabel: "Navigasi mobile",
     },
     paths: { home: "/", rooms: "/akomodasi" },
-    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", gallery: "galeri" },
+    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", gallery: "galeri", faq: "tanya-jawab" },
     hero: {
       ariaLabel: "Sambutan Shafira Resort",
       eyebrow: "Pantai Memit · Negeri Morella · Maluku Tengah",
@@ -68,6 +68,11 @@ export const copy = {
     testimonials: {
       eyebrow: "Kata Tamu Kami",
       heading: "Yang mereka bawa pulang dari Memit",
+    },
+    faq: {
+      eyebrow: "Tanya Jawab",
+      heading: "Yang sering ditanyakan tamu",
+      blurb: "Belum menemukan jawaban? Tanyakan langsung lewat WhatsApp — biasanya kami balas cepat.",
     },
     cta: {
       eyebrow: "Pesan lewat WhatsApp — tanpa ribet",
@@ -122,7 +127,7 @@ export const copy = {
       mobileNavLabel: "Mobile navigation",
     },
     paths: { home: "/en", rooms: "/en/accommodation" },
-    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", gallery: "gallery" },
+    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", gallery: "gallery", faq: "faq" },
     hero: {
       ariaLabel: "Welcome to Shafira Resort",
       eyebrow: "Memit Beach · Morella Village · Central Maluku",
@@ -169,6 +174,11 @@ export const copy = {
     testimonials: {
       eyebrow: "Guest Stories",
       heading: "What guests take home from Memit",
+    },
+    faq: {
+      eyebrow: "FAQ",
+      heading: "Questions guests often ask",
+      blurb: "Can't find your answer? Ask us directly on WhatsApp — we usually reply fast.",
     },
     cta: {
       eyebrow: "Book via WhatsApp — no hassle",
