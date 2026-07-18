@@ -19,6 +19,8 @@ export type SiteImage = {
 export type Accommodation = {
   slug: string;
   name: string;
+  /** Nama unit di pesan WhatsApp (default: name). Versi EN menyertakan nama asli. */
+  waLabel?: string;
   /** Harga per malam dalam Rupiah */
   price: number;
   tagline: string;

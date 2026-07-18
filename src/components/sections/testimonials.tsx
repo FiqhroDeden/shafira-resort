@@ -1,25 +1,29 @@
-import { testimonials } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { Reveal } from "@/components/reveal";
 
-export function Testimonials() {
+export function Testimonials({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale].testimonials;
+  const { testimonials } = getContent(locale);
+
   return (
     <section className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <div className="mb-12 max-w-2xl md:mb-16">
             <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-              Kata Tamu Kami
+              {t.eyebrow}
             </p>
             <h2 className="font-display text-3xl leading-[1.12] sm:text-4xl md:text-[2.75rem]">
-              Yang mereka bawa pulang dari Memit
+              {t.heading}
             </h2>
           </div>
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
+          {testimonials.map((item, i) => (
             <Reveal
-              key={t.name}
+              key={item.name}
               delay={(i % 2) * 0.1}
               className={i % 2 === 1 ? "md:translate-y-10" : ""}
             >
@@ -32,13 +36,15 @@ export function Testimonials() {
                 </span>
                 <blockquote className="mt-2 flex-1">
                   <p className="font-display text-lg leading-relaxed text-ink md:text-xl">
-                    {t.quote}
+                    {item.quote}
                   </p>
                 </blockquote>
                 <figcaption className="mt-7 border-t border-sand-deep pt-5">
-                  <span className="block font-medium text-ink">{t.name}</span>
+                  <span className="block font-medium text-ink">
+                    {item.name}
+                  </span>
                   <span className="mt-0.5 block text-sm text-mist">
-                    {t.origin}
+                    {item.origin}
                   </span>
                 </figcaption>
               </figure>

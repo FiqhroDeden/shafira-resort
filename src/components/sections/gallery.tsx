@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { galleryImages } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { Reveal } from "@/components/reveal";
 
 /* Pola mosaik 4 kolom (desktop): 1 foto besar, 1 foto tinggi, sisanya mengisi */
@@ -12,17 +13,20 @@ const spans = [
   "col-span-2",
 ];
 
-export function Gallery() {
+export function Gallery({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { galleryImages } = getContent(locale);
+
   return (
-    <section id="galeri" className="bg-sand py-24 md:py-32">
+    <section id={t.anchors.gallery} className="bg-sand py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <div className="mb-12 max-w-2xl md:mb-16">
             <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-              Galeri
+              {t.gallery.eyebrow}
             </p>
             <h2 className="font-display text-3xl leading-[1.12] sm:text-4xl md:text-[2.75rem]">
-              Suasana hari-hari di resort
+              {t.gallery.heading}
             </h2>
           </div>
         </Reveal>

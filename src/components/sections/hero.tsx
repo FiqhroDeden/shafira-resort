@@ -1,11 +1,15 @@
 import Image from "next/image";
-import { heroImage } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { BookingBar } from "@/components/booking-bar";
 import { Reveal } from "@/components/reveal";
 
-export function Hero() {
+export function Hero({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale].hero;
+  const { heroImage } = getContent(locale);
+
   return (
-    <section aria-label="Sambutan Shafira Resort">
+    <section aria-label={t.ariaLabel}>
       <div className="relative min-h-[86svh] overflow-hidden">
         <Image
           src={heroImage.src}
@@ -25,20 +29,19 @@ export function Hero() {
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <Reveal>
               <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/80 md:text-xs">
-                Pantai Memit · Negeri Morella · Maluku Tengah
+                {t.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.12}>
               <h1 className="max-w-3xl font-display text-4xl leading-[1.08] text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
-                Laut jernih <em className="text-sunset">Morella</em>,
-                tepat di depan pintu Anda
+                {t.h1pre}
+                <em className="text-sunset">{t.h1em}</em>
+                {t.h1post}
               </h1>
             </Reveal>
             <Reveal delay={0.24}>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-ivory/85 md:text-lg">
-                Vila, kamar, dan glamping di tepi pantai pesisir utara Pulau
-                Ambon — lengkap dengan perahu, gazebo, dan sunset yang tidak
-                perlu dicari.
+                {t.sub}
               </p>
             </Reveal>
           </div>
@@ -48,7 +51,7 @@ export function Hero() {
       {/* Booking bar menimpa tepi bawah hero */}
       <div className="relative z-10 mx-auto -mt-16 max-w-5xl px-5 md:-mt-14 md:px-8">
         <Reveal delay={0.3}>
-          <BookingBar />
+          <BookingBar locale={locale} />
         </Reveal>
       </div>
     </section>

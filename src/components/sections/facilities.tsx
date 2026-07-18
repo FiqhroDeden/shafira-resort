@@ -1,24 +1,28 @@
-import { facilities } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { FacilityIcon } from "@/components/facility-icon";
 import { Reveal } from "@/components/reveal";
 
-export function Facilities() {
+export function Facilities({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { facilities } = getContent(locale);
+
   return (
-    <section id="fasilitas" className="bg-ink py-24 text-ivory md:py-32">
+    <section
+      id={t.anchors.facilities}
+      className="bg-ink py-24 text-ivory md:py-32"
+    >
       <div className="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
           <Reveal>
             <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-              Fasilitas Resort
+              {t.facilities.eyebrow}
             </p>
             <h2 className="font-display text-3xl leading-[1.12] sm:text-4xl md:text-[2.75rem]">
-              Semua yang perlu ada, tidak lebih
+              {t.facilities.heading}
             </h2>
             <p className="mt-6 max-w-md leading-relaxed text-ivory/70">
-              Kami tidak menjanjikan kolam tak berujung atau spa bertaraf
-              bintang. Yang kami siapkan adalah hal-hal yang benar-benar
-              dipakai di pantai: perahu, gazebo, dapur, dan sinyal yang tetap
-              hidup.
+              {t.facilities.blurb}
             </p>
           </Reveal>
         </div>

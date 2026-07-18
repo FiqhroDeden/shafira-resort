@@ -1,14 +1,25 @@
 import Link from "next/link";
 import { AtSign, Clock, MapPin } from "lucide-react";
-import { site } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { waGeneralLink } from "@/lib/wa";
 import { WaIcon } from "@/components/wa-icon";
 
-export function SiteFooter() {
+export function SiteFooter({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { site } = getContent(locale);
   const { address } = site;
 
+  const footerLinks = [
+    { href: t.paths.home, label: t.nav.home },
+    { href: t.paths.rooms, label: t.footer.roomsLink },
+    { href: `${t.paths.home}#${t.anchors.facilities}`, label: t.nav.facilities },
+    { href: `${t.paths.home}#${t.anchors.around}`, label: t.nav.around },
+    { href: `${t.paths.home}#${t.anchors.gallery}`, label: t.nav.gallery },
+  ];
+
   return (
-    <footer id="kontak" className="bg-ink-deep text-ivory">
+    <footer className="bg-ink-deep text-ivory">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20 lg:grid-cols-12">
         {/* Brand */}
         <div className="lg:col-span-5">
@@ -16,12 +27,10 @@ export function SiteFooter() {
             Shafira<span className="text-sunset"> Resort</span>
           </p>
           <p className="mt-4 max-w-sm leading-relaxed text-ivory/65">
-            {site.tagline}. Resort pantai keluarga di pesisir utara Pulau
-            Ambon — menginap, berlayar kecil-kecilan, dan menonton sunset dari
-            gazebo.
+            {site.tagline}. {t.footer.blurb}
           </p>
           <a
-            href={waGeneralLink()}
+            href={waGeneralLink(locale)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-sunset px-6 py-3 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
@@ -34,7 +43,7 @@ export function SiteFooter() {
         {/* Alamat & jam */}
         <div className="lg:col-span-4">
           <h2 className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/50">
-            Alamat &amp; Jam
+            {t.footer.addressHeading}
           </h2>
           <address className="mt-5 flex gap-3 not-italic leading-relaxed text-ivory/80">
             <MapPin
@@ -47,7 +56,7 @@ export function SiteFooter() {
               <br />
               {address.district}, {address.regency}
               <br />
-              {address.province}, Indonesia
+              {address.province}, {t.footer.country}
             </span>
           </address>
           <p className="mt-4 flex gap-3 leading-relaxed text-ivory/80">
@@ -80,24 +89,18 @@ export function SiteFooter() {
                 aria-hidden="true"
                 className="h-4 w-4 shrink-0"
               />
-              Instagram segera hadir
+              {t.footer.instagramSoon}
             </p>
           )}
         </div>
 
         {/* Navigasi */}
-        <nav aria-label="Navigasi footer" className="lg:col-span-3">
+        <nav aria-label={t.footer.footerNavLabel} className="lg:col-span-3">
           <h2 className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/50">
-            Jelajahi
+            {t.footer.exploreHeading}
           </h2>
           <ul className="mt-5 space-y-3">
-            {[
-              { href: "/", label: "Beranda" },
-              { href: "/akomodasi", label: "Akomodasi & Harga" },
-              { href: "/#fasilitas", label: "Fasilitas" },
-              { href: "/#sekitar", label: "Sekitar Morella" },
-              { href: "/#galeri", label: "Galeri" },
-            ].map((l) => (
+            {footerLinks.map((l) => (
               <li key={l.href}>
                 <Link
                   href={l.href}
@@ -114,10 +117,10 @@ export function SiteFooter() {
       <div className="border-t border-ivory/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-ivory/45 md:flex-row md:items-center md:justify-between md:px-8">
           <p>
-            © {new Date().getFullYear()} Shafira Resort, Negeri Morella.
+            © {new Date().getFullYear()} {t.footer.copyright}
           </p>
           <p>
-            Foto sementara dari{" "}
+            {t.footer.photoNotePre}{" "}
             <a
               href="https://www.pexels.com"
               target="_blank"
@@ -126,7 +129,7 @@ export function SiteFooter() {
             >
               Pexels
             </a>{" "}
-            — akan diganti foto asli resort.
+            {t.footer.photoNotePost}
           </p>
         </div>
       </div>

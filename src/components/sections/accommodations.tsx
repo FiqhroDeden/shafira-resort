@@ -1,32 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { accommodations } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { formatRupiah, waBookingLink } from "@/lib/wa";
 import { Reveal } from "@/components/reveal";
 import { WaIcon } from "@/components/wa-icon";
 
-export function Accommodations() {
+export function Accommodations({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { accommodations } = getContent(locale);
   const [vila, ...rest] = accommodations;
 
   return (
-    <section id="akomodasi" className="bg-sand py-24 md:py-32">
+    <section id={t.anchors.rooms} className="bg-sand py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
             <div>
               <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-                Akomodasi &amp; Harga
+                {t.rooms.eyebrow}
               </p>
               <h2 className="max-w-xl font-display text-3xl leading-[1.12] sm:text-4xl md:text-[2.75rem]">
-                Tiga cara menginap di tepi Memit
+                {t.rooms.heading}
               </h2>
             </div>
             <Link
-              href="/akomodasi"
+              href={t.paths.rooms}
               className="group/link flex items-center gap-2 text-sm font-medium tracking-wide text-ink transition-colors hover:text-sunset"
             >
-              Lihat detail semua unit
+              {t.rooms.viewAll}
               <ArrowRight
                 strokeWidth={1.5}
                 className="h-4 w-4 transition-transform group-hover/link:translate-x-1"
@@ -35,7 +38,7 @@ export function Accommodations() {
           </div>
         </Reveal>
 
-        {/* Unit unggulan: Vila Besar — kartu lebar */}
+        {/* Unit unggulan: kartu lebar */}
         <Reveal>
           <article className="group grid overflow-hidden rounded-2xl bg-ivory lg:grid-cols-12">
             <div className="relative aspect-[4/3] overflow-hidden lg:col-span-7 lg:aspect-auto lg:min-h-[30rem]">
@@ -47,7 +50,7 @@ export function Accommodations() {
                 className="img-drift object-cover"
               />
               <span className="absolute top-5 left-5 rounded-full bg-ink/80 px-4 py-1.5 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-ivory">
-                Unit premium
+                {t.rooms.premiumBadge}
               </span>
             </div>
             <div className="flex flex-col justify-center p-7 md:p-10 lg:col-span-5 lg:p-12">
@@ -64,31 +67,31 @@ export function Accommodations() {
               <p className="mt-7 font-display text-3xl text-sunset md:text-4xl">
                 {formatRupiah(vila.price)}
                 <span className="ml-1 font-sans text-sm text-mist">
-                  / malam
+                  {t.rooms.perNight}
                 </span>
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href={waBookingLink(vila.name)}
+                  href={waBookingLink(vila.waLabel ?? vila.name, locale)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 rounded-full bg-sunset px-6 py-3 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
                 >
                   <WaIcon className="h-4 w-4" />
-                  Pesan Sekarang
+                  {t.rooms.book}
                 </a>
                 <Link
-                  href={`/akomodasi#${vila.slug}`}
+                  href={`${t.paths.rooms}#${vila.slug}`}
                   className="flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:border-ink hover:bg-ink hover:text-ivory"
                 >
-                  Lihat Detail
+                  {t.rooms.detail}
                 </Link>
               </div>
             </div>
           </article>
         </Reveal>
 
-        {/* Kamar & Glamping */}
+        {/* Dua unit lainnya */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {rest.map((unit, i) => (
             <Reveal key={unit.slug} delay={i * 0.12}>
@@ -116,24 +119,24 @@ export function Accommodations() {
                   <p className="mt-6 font-display text-2xl text-sunset md:text-3xl">
                     {formatRupiah(unit.price)}
                     <span className="ml-1 font-sans text-sm text-mist">
-                      / malam
+                      {t.rooms.perNight}
                     </span>
                   </p>
                   <div className="mt-5 flex flex-wrap gap-3">
                     <a
-                      href={waBookingLink(unit.name)}
+                      href={waBookingLink(unit.waLabel ?? unit.name, locale)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 rounded-full bg-sunset px-5 py-2.5 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
                     >
                       <WaIcon className="h-4 w-4" />
-                      Pesan Sekarang
+                      {t.rooms.book}
                     </a>
                     <Link
-                      href={`/akomodasi#${unit.slug}`}
+                      href={`${t.paths.rooms}#${unit.slug}`}
                       className="flex items-center rounded-full border border-ink/20 px-5 py-2.5 text-sm font-medium tracking-wide text-ink transition-colors hover:border-ink hover:bg-ink hover:text-ivory"
                     >
-                      Detail
+                      {t.rooms.detailShort}
                     </Link>
                   </div>
                 </div>

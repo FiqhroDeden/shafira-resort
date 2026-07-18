@@ -6,9 +6,6 @@ import {
   heroImage,
   site,
 } from "@/data/site";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { WaFloat } from "@/components/wa-float";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -112,10 +109,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-        <WaFloat />
+        {children}
       </body>
     </html>
   );

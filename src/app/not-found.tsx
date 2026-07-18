@@ -2,12 +2,13 @@ import Link from "next/link";
 import { waGeneralLink } from "@/lib/wa";
 import { WaIcon } from "@/components/wa-icon";
 
+/* Halaman 404 dwibahasa — di luar layout ber-header agar tetap ringan */
 export default function NotFound() {
   return (
-    <section className="flex min-h-[92svh] items-center bg-ink text-ivory">
+    <section className="flex min-h-svh items-center bg-ink text-ivory">
       <div className="mx-auto max-w-3xl px-5 py-32 text-center md:px-8">
         <p className="text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-          Kesalahan 404
+          Kesalahan 404 · Error 404
         </p>
         <h1 className="mt-4 font-display text-4xl leading-[1.1] sm:text-5xl md:text-6xl">
           Halaman ini hanyut terbawa arus
@@ -16,12 +17,22 @@ export default function NotFound() {
           Alamat yang Anda tuju tidak ada di peta kami. Kembali ke pantai —
           atau tanyakan langsung lewat WhatsApp.
         </p>
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ivory/55">
+          This page drifted out to sea. Head back to the beach — or ask us
+          directly on WhatsApp.
+        </p>
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/"
             className="rounded-full bg-sunset px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
           >
             Kembali ke Beranda
+          </Link>
+          <Link
+            href="/en"
+            className="rounded-full border border-ivory/30 px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:border-sunset hover:bg-sunset"
+          >
+            English Homepage
           </Link>
           <a
             href={waGeneralLink()}
@@ -30,7 +41,7 @@ export default function NotFound() {
             className="flex items-center gap-2 rounded-full border border-ivory/30 px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:border-sunset hover:bg-sunset"
           >
             <WaIcon className="h-4 w-4" />
-            Chat WhatsApp
+            WhatsApp
           </a>
         </div>
       </div>

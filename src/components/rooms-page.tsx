@@ -1,26 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { accommodations } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { formatRupiah, waBookingLink } from "@/lib/wa";
 import { BookingBar } from "@/components/booking-bar";
 import { Reveal } from "@/components/reveal";
 import { WaIcon } from "@/components/wa-icon";
 
-export const metadata: Metadata = {
-  title: "Akomodasi & Harga",
-  description:
-    "Pilihan menginap di Shafira Resort, Pantai Memit Morella: Vila Besar Rp1.500.000/malam, Kamar Rp500.000/malam, dan Glamping Rp350.000/malam. Pesan langsung via WhatsApp.",
-  alternates: { canonical: "/akomodasi" },
-  openGraph: {
-    title: "Akomodasi & Harga — Shafira Resort",
-    description:
-      "Vila Besar, Kamar, dan Glamping di tepi Pantai Memit, Morella. Pesan langsung via WhatsApp.",
-    url: "/akomodasi",
-  },
-};
+/** Isi halaman detail akomodasi — dipakai /akomodasi (ID) dan /en/accommodation (EN). */
+export function RoomsPage({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale].roomsPage;
+  const { accommodations } = getContent(locale);
 
-export default function AkomodasiPage() {
   return (
     <>
       {/* Pembuka gelap agar header transparan tetap terbaca */}
@@ -28,15 +19,13 @@ export default function AkomodasiPage() {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <Reveal>
             <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-              Akomodasi &amp; Harga
+              {t.eyebrow}
             </p>
             <h1 className="max-w-3xl font-display text-4xl leading-[1.1] sm:text-5xl md:text-6xl">
-              Pilih cara Anda menginap di tepi Memit
+              {t.heading}
             </h1>
             <p className="mt-6 max-w-2xl leading-relaxed text-ivory/75">
-              Tiga tipe unit dengan harga yang jelas — semuanya beberapa
-              langkah dari air. Pesan langsung ke pemilik lewat WhatsApp,
-              tanpa perantara dan tanpa biaya tambahan.
+              {t.sub}
             </p>
           </Reveal>
         </div>
@@ -96,7 +85,7 @@ export default function AkomodasiPage() {
                 <p className="mt-6 font-display text-3xl text-sunset md:text-4xl">
                   {formatRupiah(unit.price)}
                   <span className="ml-1 font-sans text-sm text-mist">
-                    / malam
+                    {copy[locale].rooms.perNight}
                   </span>
                 </p>
                 <p className="mt-6 leading-relaxed text-mist">
@@ -106,7 +95,10 @@ export default function AkomodasiPage() {
               <Reveal delay={0.1}>
                 <ul className="mt-7 space-y-3">
                   {unit.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm md:text-base">
+                    <li
+                      key={f}
+                      className="flex items-start gap-3 text-sm md:text-base"
+                    >
                       <Check
                         strokeWidth={2}
                         aria-hidden="true"
@@ -117,13 +109,13 @@ export default function AkomodasiPage() {
                   ))}
                 </ul>
                 <a
-                  href={waBookingLink(unit.name)}
+                  href={waBookingLink(unit.waLabel ?? unit.name, locale)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-9 inline-flex items-center gap-2.5 rounded-full bg-sunset px-7 py-3.5 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
                 >
                   <WaIcon className="h-4 w-4" />
-                  Pesan {unit.name}
+                  {t.bookUnit} {unit.name}
                 </a>
               </Reveal>
             </div>
@@ -137,17 +129,16 @@ export default function AkomodasiPage() {
           <Reveal>
             <div className="mb-10 max-w-2xl">
               <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-                Susun Pesan Anda
+                {t.composeEyebrow}
               </p>
               <h2 className="font-display text-3xl leading-[1.12] sm:text-4xl">
-                Sudah menentukan pilihan?
+                {t.composeHeading}
               </h2>
               <p className="mt-4 leading-relaxed text-ivory/75">
-                Isi tanggal dan jumlah tamu — pesan WhatsApp akan tersusun
-                otomatis dan langsung terkirim ke pemilik resort.
+                {t.composeSub}
               </p>
             </div>
-            <BookingBar />
+            <BookingBar locale={locale} />
           </Reveal>
         </div>
       </section>

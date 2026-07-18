@@ -1,27 +1,26 @@
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-import { destinations } from "@/data/site";
+import { copy } from "@/data/copy";
+import { getContent, type Locale } from "@/data/i18n";
 import { Reveal } from "@/components/reveal";
 
-export function Destinations() {
+export function Destinations({ locale = "id" }: { locale?: Locale }) {
+  const t = copy[locale];
+  const { destinations } = getContent(locale);
   const [featured, ...rest] = destinations;
 
   return (
-    <section id="sekitar" className="py-24 md:py-32">
+    <section id={t.anchors.around} className="py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <div className="mb-12 max-w-2xl md:mb-16">
             <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-sunset">
-              Jelajahi Sekitar Morella
+              {t.around.eyebrow}
             </p>
             <h2 className="font-display text-3xl leading-[1.12] sm:text-4xl md:text-[2.75rem]">
-              Menginap di Memit, menjelajah satu pesisir
+              {t.around.heading}
             </h2>
-            <p className="mt-5 leading-relaxed text-mist">
-              Morella dan sekitarnya menyimpan beberapa titik terbaik di Pulau
-              Ambon — semuanya bisa dijangkau dalam hitungan menit dari
-              resort.
-            </p>
+            <p className="mt-5 leading-relaxed text-mist">{t.around.blurb}</p>
           </div>
         </Reveal>
 
