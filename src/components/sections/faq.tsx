@@ -44,6 +44,7 @@ export function Faq({ locale = "id" }: { locale?: Locale }) {
                 href={waGeneralLink(locale)}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-wa="faq"
                 className="font-medium text-sunset underline decoration-sunset/40 underline-offset-2 transition-colors hover:text-sunset-deep"
               >
                 WhatsApp

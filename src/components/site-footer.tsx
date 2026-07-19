@@ -33,6 +33,7 @@ export function SiteFooter({ locale = "id" }: { locale?: Locale }) {
             href={waGeneralLink(locale)}
             target="_blank"
             rel="noopener noreferrer"
+            data-wa="footer"
             className="mt-7 inline-flex items-center gap-2.5 rounded-full bg-sunset px-6 py-3 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
           >
             <WaIcon className="h-4 w-4" />

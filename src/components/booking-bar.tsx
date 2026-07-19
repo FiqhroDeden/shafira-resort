@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { copy } from "@/data/copy";
 import { getContent, type Locale } from "@/data/i18n";
 import { bookingMessage, waLink } from "@/lib/wa";
@@ -30,6 +31,11 @@ export function BookingBar({
     e.preventDefault();
     const selected = accommodations.find((a) => a.name === unit);
     const label = selected?.waLabel ?? unit;
+    track("whatsapp_click", {
+      location: "booking-bar",
+      unit: selected?.slug ?? unit,
+      locale,
+    });
     const url = waLink(bookingMessage(label, checkIn, checkOut, guests, locale));
     window.open(url, "_blank", "noopener,noreferrer");
   }

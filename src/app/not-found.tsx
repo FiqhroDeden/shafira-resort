@@ -38,6 +38,7 @@ export default function NotFound() {
             href={waGeneralLink()}
             target="_blank"
             rel="noopener noreferrer"
+            data-wa="not-found"
             className="flex items-center gap-2 rounded-full border border-ivory/30 px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:border-sunset hover:bg-sunset"
           >
             <WaIcon className="h-4 w-4" />

@@ -75,6 +75,8 @@ export function Accommodations({ locale = "id" }: { locale?: Locale }) {
                   href={waBookingLink(vila.waLabel ?? vila.name, locale)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-wa="room-home"
+                  data-wa-unit={vila.slug}
                   className="flex items-center gap-2 rounded-full bg-sunset px-6 py-3 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
                 >
                   <WaIcon className="h-4 w-4" />
@@ -127,6 +129,8 @@ export function Accommodations({ locale = "id" }: { locale?: Locale }) {
                       href={waBookingLink(unit.waLabel ?? unit.name, locale)}
                       target="_blank"
                       rel="noopener noreferrer"
+                      data-wa="room-home"
+                      data-wa-unit={unit.slug}
                       className="flex items-center gap-2 rounded-full bg-sunset px-5 py-2.5 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
                     >
                       <WaIcon className="h-4 w-4" />

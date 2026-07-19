@@ -69,6 +69,7 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
               href={waGeneralLink(locale)}
               target="_blank"
               rel="noopener noreferrer"
+              data-wa="header"
               className="flex items-center gap-2 rounded-full border border-ivory/35 px-5 py-2.5 text-sm tracking-wide transition-colors hover:border-sunset hover:bg-sunset"
             >
               <WaIcon className="h-4 w-4" />
@@ -123,6 +124,7 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
             href={waGeneralLink(locale)}
             target="_blank"
             rel="noopener noreferrer"
+            data-wa="header-mobile"
             className="mt-4 flex items-center justify-center gap-2 rounded-full bg-sunset px-5 py-3.5 text-sm font-medium tracking-wide text-ivory transition-colors hover:bg-sunset-deep"
           >
             <WaIcon className="h-4 w-4" />

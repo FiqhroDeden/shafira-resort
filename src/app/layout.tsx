@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Albert_Sans, Fraunces } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import {
   accommodations,
   ctaImage,
@@ -8,6 +9,7 @@ import {
   introImages,
   site,
 } from "@/data/site";
+import { WaTracking } from "@/components/wa-tracking";
 import "./globals.css";
 
 /** URL absolut untuk aset lokal (foto asli resort ada di /public) */
@@ -148,6 +150,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <WaTracking />
+        <Analytics />
       </body>
     </html>
   );
