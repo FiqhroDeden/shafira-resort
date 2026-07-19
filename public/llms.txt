@@ -36,10 +36,10 @@ internet across the resort.
 
 ## Pages
 
-- Homepage (Indonesian): https://shafira-resort.vercel.app/
-- Homepage (English): https://shafira-resort.vercel.app/en
-- Rooms & rates (Indonesian): https://shafira-resort.vercel.app/akomodasi
-- Rooms & rates (English): https://shafira-resort.vercel.app/en/accommodation
+- Homepage (Indonesian): https://shafiraresort.com/
+- Homepage (English): https://shafiraresort.com/en
+- Rooms & rates (Indonesian): https://shafiraresort.com/akomodasi
+- Rooms & rates (English): https://shafiraresort.com/en/accommodation
 
 ## Ringkasan (Bahasa Indonesia)
 

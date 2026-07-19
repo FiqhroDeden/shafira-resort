@@ -4,7 +4,7 @@ Website company profile + pemesanan via WhatsApp untuk **Shafira Resort**,
 resort pantai di Pantai Memit, Negeri Morella, Kecamatan Leihitu,
 Maluku Tengah.
 
-**Produksi:** https://shafira-resort.vercel.app
+**Produksi:** https://shafiraresort.com
 
 ## Teknologi
 

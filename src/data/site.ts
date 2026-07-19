@@ -67,8 +67,7 @@ export const site = {
   tagline: "Tepi laut yang tenang di Pantai Memit, Morella",
   description:
     "Shafira Resort adalah resort pantai keluarga di Pantai Memit, Negeri Morella, Kecamatan Leihitu, Maluku Tengah — resort tepi laut di pesisir utara Pulau Ambon, sekitar satu jam berkendara dari Kota Ambon. Menginap di vila, kamar, atau glamping tepat di bibir pantai, dengan perahu bebas pakai, gazebo, snorkeling, dan sunset — tempat healing yang tenang di Ambon, Maluku.",
-  // TODO: ganti dengan domain asli setelah dibeli, mis. https://shafiraresort.com
-  url: "https://shafira-resort.vercel.app",
+  url: "https://shafiraresort.com",
   whatsapp: "6285243762626",
   address: {
     beach: "Pantai Memit",
