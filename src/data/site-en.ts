@@ -95,20 +95,20 @@ export const accommodationsEN: Accommodation[] = [
     ],
     image: withAlt(
       kamarID.image,
-      "Bright bedroom with wooden furniture and windows onto tropical greenery",
+      "Room terrace at Shafira Resort with rattan chairs, wood-framed windows, and a colorful stone garden on Memit Beach, Morella",
     ),
     gallery: [
       withAlt(
         kamarID.gallery[0],
-        "Traditional-style bedroom in warm light",
+        "Room interior at Shafira Resort with a large bed and air conditioning",
       ),
       withAlt(
         kamarID.gallery[1],
-        "Tropical villa bedroom with doors open to a balcony",
+        "Private bathroom in the Shafira Resort room with a seated toilet and tiled walls",
       ),
       withAlt(
         kamarID.gallery[2],
-        "Spacious wooden room with a canopy bed and natural light",
+        "Room terrace overlooking the coconut garden and sea at Shafira Resort, Memit Beach Morella",
       ),
     ],
   },
@@ -128,20 +128,20 @@ export const accommodationsEN: Accommodation[] = [
     ],
     image: withAlt(
       glampingID.image,
-      "White glamping tents among coconut palms",
+      "Glamping tent at Shafira Resort with lounge chairs under an awning, by Memit Beach in Morella",
     ),
     gallery: [
       withAlt(
         glampingID.gallery[0],
-        "Glamping tent with string lights glowing at night",
+        "Glamping tent at Shafira Resort at night against a backdrop of trees and a beachfront gazebo",
       ),
       withAlt(
         glampingID.gallery[1],
-        "Glamping tent interior with a mattress and warm décor",
+        "Glamping tent interior at Shafira Resort with a mattress, fan, and patterned throw",
       ),
       withAlt(
         glampingID.gallery[2],
-        "Row of glamping tents with string lights on the grass",
+        "Warm noodle soup and chili sauce served at the beachfront glamping area of Shafira Resort",
       ),
     ],
   },
