@@ -81,6 +81,7 @@ export const site = {
   /* Koordinat dari plus code F6QM+6QG (03°30′43″S 128°14′04″E) — situs lama resort */
   geo: { lat: -3.5119, lng: 128.2344 },
   mapsUrl: "https://maps.google.com/?q=-3.5119,128.2344",
+  plusCode: "F6QM+6QG",
   priceRange: "Rp350.000–Rp1.500.000",
 } as const;
 

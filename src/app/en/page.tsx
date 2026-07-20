@@ -9,6 +9,7 @@ import { Destinations } from "@/components/sections/destinations";
 import { Gallery } from "@/components/sections/gallery";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
+import { Location } from "@/components/sections/location";
 import { Cta } from "@/components/sections/cta";
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function HomeEN() {
       <Gallery locale="en" />
       <Testimonials locale="en" />
       <Faq locale="en" />
+      <Location locale="en" />
       <Cta locale="en" />
     </>
   );

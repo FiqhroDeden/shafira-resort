@@ -20,7 +20,7 @@ export const copy = {
       mobileNavLabel: "Navigasi mobile",
     },
     paths: { home: "/", rooms: "/akomodasi" },
-    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", gallery: "galeri", faq: "tanya-jawab" },
+    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", gallery: "galeri", faq: "tanya-jawab", location: "lokasi" },
     hero: {
       ariaLabel: "Sambutan Shafira Resort",
       eyebrow: "Pantai Memit · Negeri Morella · Maluku Tengah",
@@ -80,6 +80,15 @@ export const copy = {
       sub: "Kirim tanggal dan jumlah tamu, kami balas dengan ketersediaan unit. Semua pemesanan langsung dengan pemilik resort, tanpa biaya tambahan.",
       button: "Chat WhatsApp Kami",
     },
+    location: {
+      eyebrow: "Lokasi",
+      heading: "Di tepi Pantai Memit, Negeri Morella",
+      sub: "Sekitar satu jam berkendara dari Kota Ambon lewat jalur pesisir Leihitu. Buka di Google Maps untuk titik persisnya, atau ambil petunjuk arah.",
+      mapButton: "Buka di Google Maps",
+      directionsButton: "Petunjuk Arah",
+      coords: "Koordinat",
+      plusCode: "Plus code",
+    },
     booking: {
       formLabel: "Susun pesan pemesanan WhatsApp",
       unit: "Tipe menginap",
@@ -127,7 +136,7 @@ export const copy = {
       mobileNavLabel: "Mobile navigation",
     },
     paths: { home: "/en", rooms: "/en/accommodation" },
-    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", gallery: "gallery", faq: "faq" },
+    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", gallery: "gallery", faq: "faq", location: "location" },
     hero: {
       ariaLabel: "Welcome to Shafira Resort",
       eyebrow: "Memit Beach · Morella Village · Central Maluku",
@@ -185,6 +194,15 @@ export const copy = {
       heading: "The Memit Beach sunset won't wait — tell us when you're coming",
       sub: "Send us your dates and group size, and we'll reply with availability. You book directly with the resort's owner — no middlemen, no extra fees.",
       button: "Chat with us on WhatsApp",
+    },
+    location: {
+      eyebrow: "Location",
+      heading: "On the edge of Memit Beach, Morella village",
+      sub: "About an hour's drive from Ambon city along the Leihitu coast road. Open it in Google Maps for the exact spot, or grab directions.",
+      mapButton: "Open in Google Maps",
+      directionsButton: "Get Directions",
+      coords: "Coordinates",
+      plusCode: "Plus code",
     },
     booking: {
       formLabel: "Compose a WhatsApp booking message",
