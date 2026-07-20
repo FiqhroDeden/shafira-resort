@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/reveal";
 import type { SiteImage } from "@/data/site";
 
@@ -26,12 +26,32 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState<SiteImage | null>(null);
   const preloaded = useRef<Set<string>>(new Set());
+  const gridRef = useRef<HTMLDivElement>(null);
 
   function preload(src: string) {
     if (preloaded.current.has(src)) return;
     preloaded.current.add(src);
     new window.Image().src = optimized(src);
   }
+
+  // Touch/tanpa-hover: muat foto pertama saat galeri mendekati viewport
+  useEffect(() => {
+    const el = gridRef.current;
+    const first = images[0]?.src;
+    if (!el || !first) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          preload(first);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images]);
 
   async function open(img: SiteImage) {
     // Muat penuh dulu agar tidak sempat menampilkan foto sebelumnya
@@ -48,7 +68,10 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
 
   return (
     <>
-      <div className="grid auto-rows-[11rem] grid-cols-2 gap-3 md:auto-rows-[13rem] md:grid-cols-4 md:gap-4">
+      <div
+        ref={gridRef}
+        className="grid auto-rows-[11rem] grid-cols-2 gap-3 md:auto-rows-[13rem] md:grid-cols-4 md:gap-4"
+      >
         {images.map((img, i) => (
           <Reveal
             key={img.src}
