@@ -4,7 +4,7 @@ import { useState } from "react";
 import { track } from "@vercel/analytics";
 import { copy } from "@/data/copy";
 import { getContent, type Locale } from "@/data/i18n";
-import { bookingMessage, waLink } from "@/lib/wa";
+import { bookingMessage, formatRupiah, waLink } from "@/lib/wa";
 import { WaIcon } from "@/components/wa-icon";
 
 /**
@@ -21,11 +21,24 @@ export function BookingBar({
   locale?: Locale;
 }) {
   const t = copy[locale].booking;
+  const perNight = copy[locale].rooms.perNight;
   const { accommodations } = getContent(locale);
   const [unit, setUnit] = useState(defaultUnit ?? accommodations[0].name);
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState(2);
+
+  const selectedUnit = accommodations.find((a) => a.name === unit);
+  const nights =
+    checkIn && checkOut
+      ? Math.max(
+          0,
+          Math.round(
+            (new Date(checkOut).getTime() - new Date(checkIn).getTime()) /
+              86_400_000,
+          ),
+        )
+      : 0;
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -122,6 +135,23 @@ export function BookingBar({
         <WaIcon className="h-4 w-4" />
         {t.submit}
       </button>
+
+      {selectedUnit && (
+        <p className="text-sm text-mist sm:col-span-2 lg:col-span-full">
+          {nights > 0 ? (
+            <>
+              {nights} {t.nights} × {formatRupiah(selectedUnit.price)} ·{" "}
+              <span className="font-medium text-ink">
+                {t.total}: {formatRupiah(selectedUnit.price * nights)}
+              </span>
+            </>
+          ) : (
+            <>
+              {formatRupiah(selectedUnit.price)} {perNight}
+            </>
+          )}
+        </p>
+      )}
     </form>
   );
 }

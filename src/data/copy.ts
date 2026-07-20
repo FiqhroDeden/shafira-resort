@@ -96,6 +96,8 @@ export const copy = {
       checkOut: "Check-out",
       guests: "Tamu",
       submit: "Pesan via WhatsApp",
+      nights: "malam",
+      total: "Perkiraan total",
     },
     footer: {
       blurb: "Resort pantai keluarga di pesisir utara Pulau Ambon — menginap, berlayar kecil-kecilan, dan menonton sunset dari gazebo.",
@@ -211,6 +213,8 @@ export const copy = {
       checkOut: "Check-out",
       guests: "Guests",
       submit: "Book via WhatsApp",
+      nights: "night(s)",
+      total: "Estimated total",
     },
     footer: {
       blurb: "A family beach resort on the north coast of Ambon Island — stay over, take the boat out, and watch the sunset from a gazebo.",
