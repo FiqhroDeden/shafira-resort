@@ -20,7 +20,15 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState<SiteImage | null>(null);
 
-  function open(img: SiteImage) {
+  async function open(img: SiteImage) {
+    // Muat penuh dulu agar tidak sempat menampilkan foto sebelumnya
+    const pre = new window.Image();
+    pre.src = img.src;
+    try {
+      await pre.decode();
+    } catch {
+      /* abaikan; tetap buka walau decode gagal */
+    }
     setActive(img);
     dialogRef.current?.showModal();
   }
@@ -60,6 +68,7 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
         {active && (
           // eslint-disable-next-line @next/next/no-img-element -- ukuran dinamis, dimuat hanya saat diklik
           <img
+            key={active.src}
             src={active.src}
             alt={active.alt}
             className="max-h-[90vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
