@@ -300,9 +300,9 @@ export const destinations: Destination[] = [
     description:
       "Pantai utama Shafira Resort sekaligus panggung sunset terbaiknya. Sore hari, langit di atas laut berubah jingga — cukup duduk di gazebo dan menonton.",
     image: {
-      src: "https://images.pexels.com/photos/12446345/pexels-photo-12446345.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Matahari terbenam keemasan di pantai dengan siluet pohon kelapa",
-      credit: "Pexels — https://www.pexels.com/photo/12446345/",
+      src: "/photos/sunset-dermaga-pantai-memit.jpg",
+      alt: "Matahari terbenam jingga di balik dermaga dan gazebo Pantai Memit, Shafira Resort Morella",
+      credit: "Foto asli Shafira Resort",
     },
   },
 ];
