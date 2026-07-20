@@ -39,6 +39,7 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
     { href: t.paths.rooms, label: t.nav.rooms },
     { href: `${t.paths.home}#${t.anchors.facilities}`, label: t.nav.facilities },
     { href: `${t.paths.home}#${t.anchors.around}`, label: t.nav.around },
+    { href: `${t.paths.home}#${t.anchors.services}`, label: t.nav.services },
     { href: `${t.paths.home}#${t.anchors.gallery}`, label: t.nav.gallery },
   ];
 
