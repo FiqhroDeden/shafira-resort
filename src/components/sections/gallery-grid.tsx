@@ -15,6 +15,12 @@ const spans = [
   "col-span-2",
 ];
 
+/** Versi teroptimasi next/image (webp, jauh lebih kecil dari sumber asli) */
+const optimized = (src: string) =>
+  src.startsWith("/")
+    ? `/_next/image?url=${encodeURIComponent(src)}&w=1920&q=75`
+    : src;
+
 /** Grid galeri + lightbox pakai <dialog> native (ESC & klik latar untuk tutup) */
 export function GalleryGrid({ images }: { images: SiteImage[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -23,7 +29,7 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
   async function open(img: SiteImage) {
     // Muat penuh dulu agar tidak sempat menampilkan foto sebelumnya
     const pre = new window.Image();
-    pre.src = img.src;
+    pre.src = optimized(img.src);
     try {
       await pre.decode();
     } catch {
@@ -69,7 +75,7 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
           // eslint-disable-next-line @next/next/no-img-element -- ukuran dinamis, dimuat hanya saat diklik
           <img
             key={active.src}
-            src={active.src}
+            src={optimized(active.src)}
             alt={active.alt}
             className="max-h-[90vh] max-w-[92vw] rounded-lg object-contain shadow-2xl"
           />
