@@ -15,7 +15,7 @@ pemilik dan tidak bisa diwakilkan; sisanya bisa dibantu Claude.
 | Nama bisnis | Shafira Resort |
 | Alamat | Pantai Memit, Negeri Morella, Kec. Leihitu, Kab. Maluku Tengah, Maluku |
 | Koordinat / plus code | `-3.5119, 128.2344` / `F6QM+6QG` |
-| Telepon/WA | `+62 852-4376-2626` |
+| Telepon/WA | `+62 822-3976-7944` |
 | Instagram | `@resortsafiramemit` |
 | Jam | Buka 24 jam (tamu menginap) |
 
@@ -91,8 +91,8 @@ di Google Maps dan panel lokal hasil pencarian.
 3. **[pemilik]** Verifikasi. Untuk lokasi seperti Morella biasanya Google menawarkan **verifikasi video**: siapkan rekaman berjalan yang memperlihatkan plang/gerbang resort, bangunan, dan sekitar pantai dalam satu pengambilan. Alternatif: kartu pos (± 2 minggu) atau telepon.
 4. Lengkapi (semakin lengkap = semakin tinggi peluang tampil):
    - Jam: **Buka 24 jam**
-   - Telepon: `+62 852-4376-2626` · Situs web: `https://shafiraresort.com`
-   - Link janji temu/pemesanan: `https://wa.me/6285243762626`
+   - Telepon: `+62 822-3976-7944` · Situs web: `https://shafiraresort.com`
+   - Link janji temu/pemesanan: `https://wa.me/6282239767944`
    - Foto: unggah foto-foto asli (mulai dari 6 foto di `public/photos/` repo ini, lalu tambah dari HP: kamar, kantin, perahu, tamu beraktivitas). Target awal ± 20 foto.
    - Atribut: Wi-Fi, parkir gratis, cocok untuk anak, pantai
    - Deskripsi (salin ini):

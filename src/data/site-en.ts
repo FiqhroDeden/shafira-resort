@@ -319,7 +319,7 @@ export const faqsEN: Faq[] = [
   {
     question: "How do I book a room at Shafira Resort?",
     answer:
-      "You book directly with the owner over WhatsApp at +62 852-4376-2626 — no middlemen and no booking platforms. Send your check-in dates, room type, and group size; the form on this website composes the message for you automatically.",
+      "You book directly with the owner over WhatsApp at +62 822-3976-7944 — no middlemen and no booking platforms. Send your check-in dates, room type, and group size; the form on this website composes the message for you automatically.",
   },
   {
     question: "Is Shafira Resort a good beach resort in Ambon for a quiet getaway?",

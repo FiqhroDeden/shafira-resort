@@ -68,7 +68,7 @@ export const site = {
   description:
     "Shafira Resort adalah resort pantai keluarga di Pantai Memit, Negeri Morella, Kecamatan Leihitu, Maluku Tengah — resort tepi laut di pesisir utara Pulau Ambon, sekitar satu jam berkendara dari Kota Ambon. Menginap di vila, kamar, atau glamping tepat di bibir pantai, dengan perahu bebas pakai, gazebo, snorkeling, dan sunset — tempat healing yang tenang di Ambon, Maluku.",
   url: "https://shafiraresort.com",
-  whatsapp: "6285243762626",
+  whatsapp: "6282239767944",
   address: {
     beach: "Pantai Memit",
     village: "Negeri Morella",
@@ -359,7 +359,7 @@ export const faqs: Faq[] = [
   {
     question: "Bagaimana cara memesan kamar di Shafira Resort?",
     answer:
-      "Pemesanan langsung ke pemilik resort lewat WhatsApp di +62 852-4376-2626, tanpa perantara dan tanpa aplikasi booking. Cukup kirim tanggal check-in, tipe unit, dan jumlah tamu — formulir di situs ini bisa menyusunkan pesannya secara otomatis.",
+      "Pemesanan langsung ke pemilik resort lewat WhatsApp di +62 822-3976-7944, tanpa perantara dan tanpa aplikasi booking. Cukup kirim tanggal check-in, tipe unit, dan jumlah tamu — formulir di situs ini bisa menyusunkan pesannya secara otomatis.",
   },
   {
     question: "Apakah Shafira Resort cocok untuk tempat healing di Ambon?",
