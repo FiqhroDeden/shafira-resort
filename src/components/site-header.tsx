@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -23,7 +23,15 @@ const counterparts: Record<string, string> = {
  */
 export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const t = copy[locale];
 
   const navLinks = [
@@ -41,7 +49,11 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
     locale === "id" ? "Read in English" : "Baca dalam Bahasa Indonesia";
 
   return (
-    <header className="absolute inset-x-0 top-0 z-40 text-ivory">
+    <header
+      className={`fixed inset-x-0 top-0 z-40 text-ivory transition-colors duration-300 ${
+        scrolled ? "bg-ink-deep/95 shadow-lg backdrop-blur-sm" : ""
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8 md:py-7">
         <Link
           href={t.paths.home}
