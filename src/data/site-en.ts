@@ -67,15 +67,15 @@ export const accommodationsEN: Accommodation[] = [
     gallery: [
       withAlt(
         vilaID.gallery[0],
-        "Wooden house on a rocky shoreline surrounded by greenery",
+        "Grand Villa veranda at Shafira Resort with lounge chairs facing the coconut garden",
       ),
       withAlt(
         vilaID.gallery[1],
-        "Thatched-roof villa on the beach against tropical forest",
+        "Grand Villa bedroom at Shafira Resort with timber walls, a bed, and a fan",
       ),
       withAlt(
         vilaID.gallery[2],
-        "Wood-panelled bedroom with a white canopy bed",
+        "Private Grand Villa gazebo facing the sea at Memit Beach, Morella",
       ),
     ],
   },

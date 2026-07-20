@@ -112,19 +112,19 @@ export const accommodations: Accommodation[] = [
     },
     gallery: [
       {
-        src: "https://images.pexels.com/photos/6716955/pexels-photo-6716955.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        alt: "Rumah kayu di tepi pantai berbatu dikelilingi pepohonan hijau",
-        credit: "Pexels — https://www.pexels.com/photo/6716955/",
+        src: "/photos/vila/galeri-1.jpg",
+        alt: "Teras Vila Besar Shafira Resort dengan kursi santai menghadap kebun kelapa",
+        credit: "Foto asli Shafira Resort",
       },
       {
-        src: "https://images.pexels.com/photos/35242805/pexels-photo-35242805/free-photo-of-secluded-tropical-beachfront-villa-in-lush-jungle.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        alt: "Vila beratap rumbia di tepi pantai dengan latar hutan tropis",
-        credit: "Pexels — https://www.pexels.com/photo/35242805/",
+        src: "/photos/vila/galeri-2.jpg",
+        alt: "Kamar Vila Besar Shafira Resort berdinding kayu dengan ranjang dan kipas angin",
+        credit: "Foto asli Shafira Resort",
       },
       {
-        src: "https://images.pexels.com/photos/14025910/pexels-photo-14025910.jpeg?auto=compress&cs=tinysrgb&w=1920",
-        alt: "Kamar tidur berdinding kayu dengan ranjang berkelambu putih",
-        credit: "Pexels — https://www.pexels.com/photo/14025910/",
+        src: "/photos/vila/galeri-3.jpg",
+        alt: "Gazebo privat Vila Besar Shafira Resort menghadap laut Pantai Memit Morella",
+        credit: "Foto asli Shafira Resort",
       },
     ],
   },
