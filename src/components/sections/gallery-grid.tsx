@@ -25,6 +25,13 @@ const optimized = (src: string) =>
 export function GalleryGrid({ images }: { images: SiteImage[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState<SiteImage | null>(null);
+  const preloaded = useRef<Set<string>>(new Set());
+
+  function preload(src: string) {
+    if (preloaded.current.has(src)) return;
+    preloaded.current.add(src);
+    new window.Image().src = optimized(src);
+  }
 
   async function open(img: SiteImage) {
     // Muat penuh dulu agar tidak sempat menampilkan foto sebelumnya
@@ -51,6 +58,8 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
             <button
               type="button"
               onClick={() => open(img)}
+              onMouseEnter={() => preload(img.src)}
+              onFocus={() => preload(img.src)}
               aria-label={`Perbesar foto: ${img.alt}`}
               className="group relative block h-full w-full cursor-zoom-in overflow-hidden rounded-xl"
             >
