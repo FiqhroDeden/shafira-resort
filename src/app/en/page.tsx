@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { siteEN } from "@/data/site-en";
-import { heroImage } from "@/data/site";
 import { Hero } from "@/components/sections/hero";
 import { Intro } from "@/components/sections/intro";
 import { Accommodations } from "@/components/sections/accommodations";
@@ -38,13 +37,20 @@ export const metadata: Metadata = {
     title: "Shafira Resort — Beach Resort in Ambon, Maluku, Indonesia",
     description: siteEN.description,
     url: "/en",
-    images: [{ url: heroImage.src, width: 1600, height: 900 }],
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Shafira Resort — beach resort at Memit Beach, Morella, Maluku",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Shafira Resort — Beach Resort in Ambon, Maluku, Indonesia",
     description: siteEN.description,
-    images: [heroImage.src],
+    images: ["/og.jpg"],
   },
 };
 

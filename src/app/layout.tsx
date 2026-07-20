@@ -59,14 +59,19 @@ export const metadata: Metadata = {
     description: site.description,
     url: "/",
     images: [
-      { url: heroImage.src, width: 1600, height: 900, alt: heroImage.alt },
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Shafira Resort — resort pantai di Pantai Memit, Morella, Maluku",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — Resort Pantai di Morella, Pulau Ambon, Maluku`,
     description: site.description,
-    images: [heroImage.src],
+    images: ["/og.jpg"],
   },
   robots: { index: true, follow: true },
 };
