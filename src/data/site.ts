@@ -308,6 +308,78 @@ export const destinations: Destination[] = [
   },
 ];
 
+/* Destinasi Maluku yang lebih luas (Pulau Ambon + Pulau Seram). `distance`
+   dipakai sebagai label pulau/perjalanan, bukan estimasi menit. Foto Pexels
+   sementara — pemilik dapat mengganti dengan foto asli tiap destinasi. */
+export const malukuDestinations: Destination[] = [
+  {
+    name: "Pantai Natsepa",
+    distance: "Pulau Ambon",
+    description:
+      "Teluk berpasir landai di timur Kota Ambon, terkenal dengan rujak Natsepa-nya. Air tenang untuk berenang santai, sore hari untuk duduk-duduk sambil makan rujak.",
+    image: {
+      src: "https://images.pexels.com/photos/2549017/pexels-photo-2549017.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Pantai tropis berpasir putih dengan pohon kelapa condong ke laut biru jernih",
+      credit: "Pexels — https://www.pexels.com/photo/2549017/",
+    },
+  },
+  {
+    name: "Pintu Kota",
+    distance: "Pulau Ambon",
+    description:
+      "Tebing karang berlubang menyerupai gerbang laut di ujung selatan Pulau Ambon — latar foto yang hampir selalu dibawa pulang orang dari Ambon.",
+    image: {
+      src: "https://images.pexels.com/photos/34334845/pexels-photo-34334845.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Tebing karang dengan lubang alami menyerupai gerbang, menghadap laut",
+      credit: "Pexels — https://www.pexels.com/photo/34334845/",
+    },
+  },
+  {
+    name: "Benteng Amsterdam",
+    distance: "Pulau Ambon · Negeri Hila",
+    description:
+      "Benteng batu peninggalan kolonial di Negeri Hila, pesisir Leihitu — tetangga dekat Morella. Menara dan tembok tuanya masih berdiri, menyimpan cerita panjang perdagangan rempah Maluku.",
+    image: {
+      src: "https://images.pexels.com/photos/9551082/pexels-photo-9551082.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Tembok dan menara benteng batu tua di bawah langit senja",
+      credit: "Pexels — https://www.pexels.com/photo/9551082/",
+    },
+  },
+  {
+    name: "Pantai Ora",
+    distance: "Pulau Seram · seberang dengan kapal",
+    description:
+      "Air sebening kaca dengan pondok-pondok di atas laut di pesisir Pulau Seram. Sering disebut surga tersembunyi Maluku — dan memang sepadan untuk menyeberang.",
+    image: {
+      src: "https://images.pexels.com/photos/30652930/pexels-photo-30652930.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Laut biru toska sangat jernih dengan tepi pasir dan tanjung berbukit",
+      credit: "Pexels — https://www.pexels.com/photo/30652930/",
+    },
+  },
+  {
+    name: "Sawai & Taman Nasional Manusela",
+    distance: "Pulau Seram · seberang dengan kapal",
+    description:
+      "Kampung nelayan yang bersandar di kaki tebing Pulau Seram, gerbang menuju hutan Taman Nasional Manusela. Di sini laut bertemu rimba dalam satu pandangan.",
+    image: {
+      src: "https://images.pexels.com/photos/12895836/pexels-photo-12895836.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Kampung pesisir di tanjung berhutan hijau dengan pantai dan ombak",
+      credit: "Pexels — https://www.pexels.com/photo/12895836/",
+    },
+  },
+  {
+    name: "Pulau Osi",
+    distance: "Pulau Seram · Seram Barat",
+    description:
+      "Pulau kecil di barat Seram yang tersambung ke daratan lewat jembatan kayu panjang di atas laut dangkal yang jernih — berjalan di atas air sebelum sampai.",
+    image: {
+      src: "https://images.pexels.com/photos/9071046/pexels-photo-9071046.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      alt: "Jembatan kayu panjang membentang di atas laut jernih menuju pantai berpohon kelapa",
+      credit: "Pexels — https://www.pexels.com/photo/9071046/",
+    },
+  },
+];
+
 /* ------------------------------------------------------------ */
 /*  TESTIMONI                                                    */
 /*  TODO: ini contoh/placeholder — ganti dengan ulasan asli tamu */

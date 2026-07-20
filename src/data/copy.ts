@@ -21,7 +21,7 @@ export const copy = {
       mobileNavLabel: "Navigasi mobile",
     },
     paths: { home: "/", rooms: "/akomodasi" },
-    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", services: "layanan", gallery: "galeri", faq: "tanya-jawab", location: "lokasi" },
+    anchors: { rooms: "akomodasi", facilities: "fasilitas", around: "sekitar", maluku: "destinasi-maluku", services: "layanan", gallery: "galeri", faq: "tanya-jawab", location: "lokasi" },
     hero: {
       ariaLabel: "Sambutan Shafira Resort",
       eyebrow: "Pantai Memit · Negeri Morella · Maluku Tengah",
@@ -61,6 +61,11 @@ export const copy = {
       eyebrow: "Jelajahi Sekitar Morella",
       heading: "Menginap di Memit, menjelajah satu pesisir",
       blurb: "Morella dan sekitarnya menyimpan beberapa titik terbaik di Pulau Ambon — semuanya bisa dijangkau dalam hitungan menit dari resort.",
+    },
+    maluku: {
+      eyebrow: "Destinasi Maluku",
+      heading: "Dari Morella, jelajah Ambon sampai Seram",
+      blurb: "Keindahan Maluku tak berhenti di Morella. Dari pantai dan benteng di Pulau Ambon sampai laut jernih Pulau Seram — kami bantu antar dan susun perjalanannya lewat paket wisata.",
     },
     services: {
       eyebrow: "Satu Pintu, Semua Beres",
@@ -183,7 +188,7 @@ export const copy = {
       mobileNavLabel: "Mobile navigation",
     },
     paths: { home: "/en", rooms: "/en/accommodation" },
-    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", services: "services", gallery: "gallery", faq: "faq", location: "location" },
+    anchors: { rooms: "rooms", facilities: "facilities", around: "around-morella", maluku: "maluku-destinations", services: "services", gallery: "gallery", faq: "faq", location: "location" },
     hero: {
       ariaLabel: "Welcome to Shafira Resort",
       eyebrow: "Memit Beach · Morella Village · Central Maluku",
@@ -222,6 +227,11 @@ export const copy = {
       eyebrow: "Explore Around Morella",
       heading: "Stay at Memit, roam a whole coastline",
       blurb: "Morella and its surroundings hold some of Ambon Island's finest spots — all reachable within minutes of the resort.",
+    },
+    maluku: {
+      eyebrow: "Maluku Destinations",
+      heading: "From Morella, roam from Ambon to Seram",
+      blurb: "Maluku's best doesn't stop at Morella. From the beaches and forts of Ambon Island to the clear seas of Seram — we can arrange the trip and map out the route through our tour packages.",
     },
     services: {
       eyebrow: "One Door, Everything Handled",

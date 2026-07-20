@@ -5,6 +5,7 @@ import { Intro } from "@/components/sections/intro";
 import { Accommodations } from "@/components/sections/accommodations";
 import { Facilities } from "@/components/sections/facilities";
 import { Destinations } from "@/components/sections/destinations";
+import { Maluku } from "@/components/sections/maluku";
 import { Services } from "@/components/sections/services";
 import { Gallery } from "@/components/sections/gallery";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -63,6 +64,7 @@ export default function HomeEN() {
       <Accommodations locale="en" />
       <Facilities locale="en" />
       <Destinations locale="en" />
+      <Maluku locale="en" />
       <Services locale="en" />
       <Gallery locale="en" />
       <Testimonials locale="en" />

@@ -14,6 +14,7 @@ import {
   galleryImages,
   heroImage,
   introImages,
+  malukuDestinations,
   site,
   type Accommodation,
   type Destination,
@@ -238,6 +239,79 @@ export const destinationsEN: Destination[] = [
     image: withAlt(
       memitID.image,
       "Orange sunset behind the pier and gazebo at Memit Beach, Shafira Resort Morella",
+    ),
+  },
+];
+
+/* Wider Maluku destinations — Ambon Island + Seram Island (follows site.ts) */
+const [natsepaID, pintuKotaID, amsterdamID, oraID, sawaiID, osiID] =
+  malukuDestinations;
+
+export const malukuDestinationsEN: Destination[] = [
+  {
+    ...natsepaID,
+    name: "Natsepa Beach",
+    distance: "Ambon Island",
+    description:
+      "A gently shelving bay east of Ambon city, famous for its Natsepa rujak (fruit salad). Calm water for an easy swim, late afternoons for sitting out with a plate of rujak.",
+    image: withAlt(
+      natsepaID.image,
+      "Tropical white-sand beach with a palm leaning over clear blue water",
+    ),
+  },
+  {
+    ...pintuKotaID,
+    name: "Pintu Kota",
+    distance: "Ambon Island",
+    description:
+      "A cliff with a natural sea-gate arch on the southern tip of Ambon Island — the backdrop almost everyone brings home from Ambon.",
+    image: withAlt(
+      pintuKotaID.image,
+      "Coastal rock cliff with a natural gate-like arch facing the sea",
+    ),
+  },
+  {
+    ...amsterdamID,
+    name: "Fort Amsterdam",
+    distance: "Ambon Island · Hila village",
+    description:
+      "A colonial-era stone fort in Hila on the Leihitu coast — a close neighbor of Morella. Its old tower and walls still stand, holding the long story of the Maluku spice trade.",
+    image: withAlt(
+      amsterdamID.image,
+      "Walls and tower of an old stone fort under an evening sky",
+    ),
+  },
+  {
+    ...oraID,
+    name: "Ora Beach",
+    distance: "Seram Island · a boat crossing away",
+    description:
+      "Glass-clear water with cottages built over the sea on the coast of Seram Island. Often called Maluku's hidden paradise — and well worth the crossing.",
+    image: withAlt(
+      oraID.image,
+      "Very clear turquoise sea with a sandy edge and a hilly headland",
+    ),
+  },
+  {
+    ...sawaiID,
+    name: "Sawai & Manusela National Park",
+    distance: "Seram Island · a boat crossing away",
+    description:
+      "A fishing village tucked against the cliff-foot of Seram Island, the gateway into the Manusela National Park jungle. Here the sea meets the rainforest in a single view.",
+    image: withAlt(
+      sawaiID.image,
+      "Coastal village on a forested headland with a beach and surf",
+    ),
+  },
+  {
+    ...osiID,
+    name: "Osi Island",
+    distance: "Seram Island · West Seram",
+    description:
+      "A small island off western Seram, linked to the mainland by a long wooden bridge over clear shallow water — a walk across the sea before you arrive.",
+    image: withAlt(
+      osiID.image,
+      "A long wooden bridge stretching over clear water toward a palm-lined beach",
     ),
   },
 ];
