@@ -292,12 +292,12 @@ export const ctaImageEN: SiteImage = withAlt(
 );
 
 const galleryAltsEN = [
-  "Small clear waves washing over a sandy beach",
-  "Traditional wooden boat floating on turquoise sea",
-  "Wooden gazebo at the end of a pier facing the sea",
-  "Soft corals and small fish in the waters off Memit Beach",
-  "Tropical beach with clear blue water and a rocky shoreline",
-  "Silhouetted coconut palms against an orange evening sky",
+  "Memit Beach shoreline at Shafira Resort — a shady pebble beach with lounge benches and clear sea",
+  "Sunset over the sea from Memit Beach, Shafira Resort Morella",
+  "Beachfront gazebos at Shafira Resort with a colorful stone garden",
+  "The Resort Shafira boat on a rocky beach with shade trees and the Morella sea",
+  "Sea view from the lounging area at Shafira Resort, Memit Beach",
+  "Wooden cottage and grassy grounds facing the sea at Shafira Resort, Morella",
 ];
 
 export const galleryImagesEN: SiteImage[] = galleryImages.map((img, i) =>

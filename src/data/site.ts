@@ -408,33 +408,33 @@ export const ctaImage: SiteImage = {
 
 export const galleryImages: SiteImage[] = [
   {
-    src: "https://images.pexels.com/photos/11090567/pexels-photo-11090567.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Ombak kecil berair jernih menyapu pantai berpasir",
-    credit: "Pexels — https://www.pexels.com/photo/11090567/",
-  },
-  {
-    src: "https://images.pexels.com/photos/36609167/pexels-photo-36609167/free-photo-of-traditional-longtail-boat-on-phuket-s-turquoise-waters.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Perahu kayu tradisional terapung di laut biru kehijauan",
-    credit: "Pexels — https://www.pexels.com/photo/36609167/",
-  },
-  {
-    src: "https://images.pexels.com/photos/984291/pexels-photo-984291.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Gazebo kayu di ujung dermaga menghadap laut",
-    credit: "Pexels — https://www.pexels.com/photo/984291/",
-  },
-  {
-    src: "/photos/terumbu-karang-pantai-memit.jpg",
-    alt: "Terumbu karang lunak dan ikan-ikan kecil di perairan Pantai Memit",
+    src: "/photos/galeri/foto-1.jpg",
+    alt: "Tepi Pantai Memit Shafira Resort — pantai berkerikil rindang dengan bangku santai dan laut jernih",
     credit: "Foto asli Shafira Resort",
   },
   {
-    src: "https://images.pexels.com/photos/10218413/pexels-photo-10218413.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Pantai tropis berair biru jernih dengan garis pantai berbatu",
-    credit: "Pexels — https://www.pexels.com/photo/10218413/",
+    src: "/photos/galeri/foto-2.jpg",
+    alt: "Matahari terbenam di laut dari tepi Pantai Memit, Shafira Resort Morella",
+    credit: "Foto asli Shafira Resort",
   },
   {
-    src: "https://images.pexels.com/photos/4870971/pexels-photo-4870971.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Siluet pohon kelapa di depan langit senja berwarna jingga",
-    credit: "Pexels — https://www.pexels.com/photo/4870971/",
+    src: "/photos/galeri/foto-3.jpg",
+    alt: "Gazebo-gazebo tepi laut di Shafira Resort dengan taman batu warna-warni",
+    credit: "Foto asli Shafira Resort",
+  },
+  {
+    src: "/photos/galeri/foto-4.jpg",
+    alt: "Perahu Resort Shafira di pantai berkarang dengan pohon rindang dan laut Morella",
+    credit: "Foto asli Shafira Resort",
+  },
+  {
+    src: "/photos/galeri/foto-5.jpg",
+    alt: "Pemandangan laut dari area bersantai Shafira Resort di Pantai Memit",
+    credit: "Foto asli Shafira Resort",
+  },
+  {
+    src: "/photos/galeri/foto-6.jpg",
+    alt: "Cottage kayu dan halaman rumput menghadap laut di Shafira Resort, Morella",
+    credit: "Foto asli Shafira Resort",
   },
 ];
