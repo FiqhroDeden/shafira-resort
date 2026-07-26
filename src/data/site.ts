@@ -455,16 +455,16 @@ export const faqs: Faq[] = [
 /* ------------------------------------------------------------ */
 
 export const heroImage: SiteImage = {
-  src: "/photos/cottage-laut-shafira-resort-memit.jpg",
-  alt: "Cottage ungu Shafira Resort berdiri di atas laut jernih kehijauan Pantai Memit dengan latar hutan Morella",
+  src: "/photos/hero-pantai-memit-shafira-resort.jpg",
+  alt: "Air laut jernih kehijauan Pantai Memit dengan cottage dan gazebo di tepi hutan Morella, Shafira Resort",
   credit: "Foto asli Shafira Resort",
 };
 
 export const introImages: { portrait: SiteImage; landscape: SiteImage } = {
   portrait: {
-    src: "/photos/dermaga-shafira-resort-morella.jpg",
-    alt: "Dermaga kayu ungu Shafira Resort berhias lampion dengan gazebo di atas air laut jernih",
-    credit: "Foto asli Shafira Resort",
+    src: "https://images.pexels.com/photos/18363516/pexels-photo-18363516.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    alt: "Dermaga kayu panjang menuju gazebo beratap daun kelapa di atas laut tenang",
+    credit: "Pexels — https://www.pexels.com/photo/18363516/",
   },
   landscape: {
     src: "https://images.pexels.com/photos/9802332/pexels-photo-9802332.jpeg?auto=compress&cs=tinysrgb&w=1920",

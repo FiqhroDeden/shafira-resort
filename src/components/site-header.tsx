@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -58,10 +59,20 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8 md:py-7">
         <Link
           href={t.paths.home}
-          className="font-display text-xl tracking-wide md:text-2xl"
+          className="flex items-center gap-2.5 md:gap-3"
           onClick={() => setOpen(false)}
         >
-          Shafira<span className="text-sunset"> Resort</span>
+          <Image
+            src="/logo-mark-shafira-resort.png"
+            alt=""
+            width={656}
+            height={761}
+            priority
+            className="h-9 w-auto md:h-11"
+          />
+          <span className="font-display text-xl tracking-wide md:text-2xl">
+            Shafira<span className="text-sunset"> Resort</span>
+          </span>
         </Link>
 
         <div className="flex items-center gap-3">

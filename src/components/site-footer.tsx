@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AtSign, Clock, MapPin } from "lucide-react";
 import { copy } from "@/data/copy";
@@ -23,9 +24,18 @@ export function SiteFooter({ locale = "id" }: { locale?: Locale }) {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-20 lg:grid-cols-12">
         {/* Brand */}
         <div className="lg:col-span-5">
-          <p className="font-display text-2xl">
-            Shafira<span className="text-sunset"> Resort</span>
-          </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo-mark-shafira-resort.png"
+              alt=""
+              width={656}
+              height={761}
+              className="h-12 w-auto"
+            />
+            <p className="font-display text-2xl">
+              Shafira<span className="text-sunset"> Resort</span>
+            </p>
+          </div>
           <p className="mt-4 max-w-sm leading-relaxed text-ivory/65">
             {site.tagline}. {t.footer.blurb}
           </p>

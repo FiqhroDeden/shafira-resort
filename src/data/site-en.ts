@@ -346,13 +346,13 @@ export const testimonialsEN: Testimonial[] = [
 
 export const heroImageEN: SiteImage = withAlt(
   heroImage,
-  "Shafira Resort's lilac overwater cottage on the clear emerald sea of Memit Beach, backed by Morella's forest",
+  "The clear emerald water of Memit Beach with cottages and gazebos along Morella's forest edge, Shafira Resort",
 );
 
 export const introImagesEN = {
   portrait: withAlt(
     introImages.portrait,
-    "Shafira Resort's purple wooden pier decorated with lanterns, with gazebos over clear seawater",
+    "A long wooden pier leading to a palm-thatched gazebo over calm sea",
   ),
   landscape: withAlt(
     introImages.landscape,
