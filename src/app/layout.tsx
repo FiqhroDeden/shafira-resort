@@ -105,7 +105,7 @@ const jsonLd = {
         longitude: site.geo.lng,
       },
       hasMap: site.mapsUrl,
-      sameAs: [`https://www.instagram.com/${site.instagram}/`],
+      sameAs: [`https://www.instagram.com/${site.instagram}/`, site.mapsUrl],
       amenityFeature: facilities.map((f) => ({
         "@type": "LocationFeatureSpecification",
         name: f.title,
