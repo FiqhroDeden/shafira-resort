@@ -128,7 +128,16 @@ export function SiteFooter({ locale = "id" }: { locale?: Locale }) {
       <div className="border-t border-ivory/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-ivory/45 md:flex-row md:items-center md:justify-between md:px-8">
           <p>
-            © {new Date().getFullYear()} {t.footer.copyright}
+            © {new Date().getFullYear()} {t.footer.copyright}{" "}
+            <span className="text-ivory/30">·</span> {t.footer.credit}{" "}
+            <a
+              href="https://fiqhrodedhen.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-ivory/30 underline-offset-2 transition-colors hover:text-ivory/70"
+            >
+              Fiqhro Dedhen
+            </a>
           </p>
           <p>
             {t.footer.photoNotePre}{" "}

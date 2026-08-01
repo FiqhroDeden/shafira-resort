@@ -158,6 +158,7 @@ export const copy = {
       copyright: "Shafira Resort, Negeri Morella.",
       photoNotePre: "Foto sementara dari",
       photoNotePost: "— akan diganti foto asli resort.",
+      credit: "Dibuat oleh",
       footerNavLabel: "Navigasi footer",
     },
     roomsPage: {
@@ -324,6 +325,7 @@ export const copy = {
       copyright: "Shafira Resort, Morella Village.",
       photoNotePre: "Temporary photos from",
       photoNotePost: "— to be replaced with the resort's own.",
+      credit: "Built by",
       footerNavLabel: "Footer navigation",
     },
     roomsPage: {
