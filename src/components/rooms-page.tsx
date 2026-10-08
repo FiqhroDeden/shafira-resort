@@ -8,6 +8,18 @@ import { Reveal } from "@/components/reveal";
 import { WaIcon } from "@/components/wa-icon";
 
 /** Isi halaman detail akomodasi — dipakai /akomodasi (ID) dan /en/accommodation (EN). */
+/** Grid foto pendukung yang selalu terisi penuh: 3 → 3 kolom, 4 → 2/4 kolom, 5 → 2 + 3 */
+function thumbGrid(count: number) {
+  if (count === 4)
+    return { grid: "grid-cols-2 sm:grid-cols-4", item: () => "" };
+  if (count === 5)
+    return {
+      grid: "grid-cols-6",
+      item: (j: number) => (j < 2 ? "col-span-3" : "col-span-2"),
+    };
+  return { grid: "grid-cols-3", item: () => "" };
+}
+
 export function RoomsPage({ locale = "id" }: { locale?: Locale }) {
   const t = copy[locale].roomsPage;
   const { accommodations, site } = getContent(locale);
@@ -76,9 +88,15 @@ export function RoomsPage({ locale = "id" }: { locale?: Locale }) {
                   />
                 </div>
               </Reveal>
-              <div className="mt-4 grid grid-cols-3 gap-4">
+              <div
+                className={`mt-4 grid gap-4 ${thumbGrid(unit.gallery.length).grid}`}
+              >
                 {unit.gallery.map((img, j) => (
-                  <Reveal key={img.src} delay={j * 0.08}>
+                  <Reveal
+                    key={img.src}
+                    delay={j * 0.08}
+                    className={thumbGrid(unit.gallery.length).item(j)}
+                  >
                     <div className="group relative aspect-square overflow-hidden rounded-xl">
                       <Image
                         src={img.src}

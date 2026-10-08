@@ -14,6 +14,8 @@ export type SiteImage = {
   alt: string;
   /** Sumber foto sementara (Pexels). Ganti dengan foto asli resort bila sudah ada. */
   credit: string;
+  /** Jika ada, item ini adalah video; `src` dipakai sebagai poster. */
+  video?: string;
 };
 
 export type Accommodation = {
@@ -120,12 +122,17 @@ export const accommodations: Accommodation[] = [
       },
       {
         src: "/photos/vila/galeri-2.jpg",
-        alt: "Kamar Vila Besar Shafira Resort berdinding kayu dengan ranjang dan kipas angin",
+        alt: "Kamar Vila Besar Shafira Resort berdinding dan berlantai kayu dengan ranjang besar dan kipas angin dinding",
         credit: "Foto asli Shafira Resort",
       },
       {
         src: "/photos/vila/galeri-3.jpg",
         alt: "Gazebo privat Vila Besar Shafira Resort menghadap laut Pantai Memit Morella",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/vila/galeri-4.jpg",
+        alt: "Kamar kedua Vila Besar Shafira Resort dengan ranjang sorong, lantai kayu, dan jendela bertirai",
         credit: "Foto asli Shafira Resort",
       },
     ],
@@ -153,7 +160,7 @@ export const accommodations: Accommodation[] = [
     gallery: [
       {
         src: "/photos/kamar/galeri-1.jpg",
-        alt: "Interior kamar Shafira Resort dengan ranjang besar dan pendingin ruangan (AC)",
+        alt: "Interior kamar Shafira Resort dengan ranjang besar, pendingin ruangan (AC), dan kamar mandi dalam",
         credit: "Foto asli Shafira Resort",
       },
       {
@@ -164,6 +171,11 @@ export const accommodations: Accommodation[] = [
       {
         src: "/photos/kamar/galeri-3.jpg",
         alt: "Teras kamar menghadap kebun kelapa dan laut di Shafira Resort, Pantai Memit Morella",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/kamar/galeri-4.jpg",
+        alt: "Kamar Shafira Resort ber-AC dengan ranjang sorong dua kasur dan lantai keramik motif",
         credit: "Foto asli Shafira Resort",
       },
     ],
@@ -185,7 +197,7 @@ export const accommodations: Accommodation[] = [
     ],
     image: {
       src: "/photos/glamping/utama.jpg",
-      alt: "Tenda glamping Shafira Resort dengan kursi santai di bawah kanopi, di tepi Pantai Memit Morella",
+      alt: "Tenda glamping Shafira Resort dengan kasur, alas bermotif, dan dua kursi santai di bawah kanopi, di Pantai Memit Morella",
       credit: "Foto asli Shafira Resort",
     },
     gallery: [
@@ -196,12 +208,22 @@ export const accommodations: Accommodation[] = [
       },
       {
         src: "/photos/glamping/galeri-2.jpg",
-        alt: "Interior tenda glamping Shafira Resort dengan kasur, kipas angin, dan alas bermotif",
+        alt: "Interior tenda glamping Shafira Resort dengan kasur, bantal, dan alas lantai bermotif hijau",
         credit: "Foto asli Shafira Resort",
       },
       {
         src: "/photos/glamping/galeri-3.jpg",
         alt: "Sajian mi kuah hangat dan sambal di area glamping Shafira Resort tepi pantai",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/glamping/galeri-4.jpg",
+        alt: "Kursi santai dan meja lipat di depan tenda glamping Shafira Resort di bawah jaring peneduh",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/glamping/galeri-5.jpg",
+        alt: "Teras tenda glamping Shafira Resort dengan dua kursi santai dan keset di depan pintu tenda",
         credit: "Foto asli Shafira Resort",
       },
     ],
@@ -490,6 +512,12 @@ export const galleryImages: SiteImage[] = [
     src: "/photos/galeri/foto-2.jpg",
     alt: "Matahari terbenam di laut dari tepi Pantai Memit, Shafira Resort Morella",
     credit: "Foto asli Shafira Resort",
+  },
+  {
+    src: "/photos/galeri/video-poster.jpg",
+    video: "/videos/pemandangan-shafira-resort.mp4",
+    alt: "Video pemandangan tepi Pantai Memit Shafira Resort — pasir putih, pohon rindang, dan langit senja",
+    credit: "Video asli Shafira Resort",
   },
   {
     src: "/photos/galeri/foto-3.jpg",
