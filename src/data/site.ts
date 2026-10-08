@@ -14,8 +14,14 @@ export type SiteImage = {
   alt: string;
   /** Sumber foto sementara (Pexels). Ganti dengan foto asli resort bila sudah ada. */
   credit: string;
-  /** Sumber foto pihak ketiga — ditampilkan sebagai keterangan di atas foto */
-  source?: { author: string; license: string; url: string; licenseUrl: string };
+  /** Sumber foto pihak ketiga — ditampilkan sebagai keterangan di atas foto.
+      Tanpa `license` berarti foto milik sumbernya (hanya dicantumkan + backlink). */
+  source?: {
+    author: string;
+    url: string;
+    license?: string;
+    licenseUrl?: string;
+  };
   /** Jika ada, item ini adalah video; `src` dipakai sebagai poster. */
   video?: string;
 };
@@ -282,9 +288,10 @@ export const destinations: Destination[] = [
     description:
       "Spot snorkeling dan diving paling terkenal di Morella. Airnya sebening kaca — ikan berenang sampai ke tepian, bahkan terlihat dari atas tangga masuknya.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Lubang_Buaya_Ambon.jpg/960px-Lubang_Buaya_Ambon.jpg",
+      src: "/photos/destinasi/lubang-buaya.jpg",
       alt: "Air laut jernih di spot snorkeling Lubang Buaya, Morella",
-      credit: "Ilham097 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lubang_Buaya_Ambon.jpg",
+      credit:
+        "Ilham097 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lubang_Buaya_Ambon.jpg",
       source: {
         author: "Ilham097",
         license: "CC BY-SA 4.0",
@@ -333,9 +340,10 @@ export const destinations: Destination[] = [
     description:
       "Pantai pasir putih sepanjang hampir satu kilometer yang pernah dinobatkan UNDP sebagai salah satu pantai terindah di Indonesia.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Pantai_Liang%2C_Maluku.jpg/1280px-Pantai_Liang%2C_Maluku.jpg",
+      src: "/photos/destinasi/pantai-liang.jpg",
       alt: "Pasir putih dan laut biru jernih di Pantai Liang, Maluku Tengah",
-      credit: "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Liang,_Maluku.jpg",
+      credit:
+        "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Liang,_Maluku.jpg",
       source: {
         author: "Trifosa18",
         license: "CC BY-SA 4.0",
@@ -359,8 +367,9 @@ export const destinations: Destination[] = [
 
 /* Destinasi Maluku yang lebih luas (Pulau Ambon + Pulau Seram). `distance`
    dipakai sebagai label pulau/perjalanan, bukan estimasi menit. Foto dari
-   Wikimedia Commons (lisensi bebas, wajib atribusi); yang belum ada di Commons
-   masih memakai foto ilustrasi Pexels. */
+   Wikimedia Commons (lisensi bebas, wajib atribusi) disimpan di
+   public/photos/destinasi; yang tidak ada di Commons diambil dari situs
+   sumbernya dengan backlink (hak cipta tetap milik sumber). */
 export const malukuDestinations: Destination[] = [
   {
     name: "Pantai Natsepa",
@@ -368,9 +377,10 @@ export const malukuDestinations: Destination[] = [
     description:
       "Teluk berpasir landai di timur Kota Ambon, terkenal dengan rujak Natsepa-nya. Air tenang untuk berenang santai, sore hari untuk duduk-duduk sambil makan rujak.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg/1280px-Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
+      src: "/photos/destinasi/pantai-natsepa.jpg",
       alt: "Pantai Natsepa di Suli, Pulau Ambon",
-      credit: "MuhammadIsra48 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
+      credit:
+        "MuhammadIsra48 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
       source: {
         author: "MuhammadIsra48",
         license: "CC BY-SA 4.0",
@@ -385,14 +395,13 @@ export const malukuDestinations: Destination[] = [
     description:
       "Tebing karang berlubang menyerupai gerbang laut di ujung selatan Pulau Ambon — latar foto yang hampir selalu dibawa pulang orang dari Ambon.",
     image: {
-      src: "https://images.pexels.com/photos/34334845/pexels-photo-34334845.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Tebing karang dengan lubang alami menyerupai gerbang, menghadap laut",
-      credit: "Pexels — https://www.pexels.com/photo/34334845/",
+      src: "/photos/destinasi/pintu-kota.jpg",
+      alt: "Tebing karang berlubang Pantai Pintu Kota menghadap laut, Airlouw, Pulau Ambon",
+      credit:
+        "Indonesia.travel (Kemenparekraf) — https://www.indonesia.travel/id/id/destination/maluku-papua/maluku/pantai-pintu-kota-ambon/",
       source: {
-        author: "Pexels",
-        license: "Pexels License",
-        url: "https://www.pexels.com/photo/34334845/",
-        licenseUrl: "https://www.pexels.com/license/",
+        author: "Indonesia.travel",
+        url: "https://www.indonesia.travel/id/id/destination/maluku-papua/maluku/pantai-pintu-kota-ambon/",
       },
     },
   },
@@ -402,9 +411,10 @@ export const malukuDestinations: Destination[] = [
     description:
       "Benteng batu peninggalan kolonial di Negeri Hila, pesisir Leihitu — tetangga dekat Morella. Menara dan tembok tuanya masih berdiri, menyimpan cerita panjang perdagangan rempah Maluku.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Benteng_Amsterdam.jpg/1280px-Benteng_Amsterdam.jpg",
+      src: "/photos/destinasi/benteng-amsterdam.jpg",
       alt: "Bangunan Benteng Amsterdam di Negeri Hila, Leihitu, Pulau Ambon",
-      credit: "Kainjock — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Benteng_Amsterdam.jpg",
+      credit:
+        "Kainjock — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Benteng_Amsterdam.jpg",
       source: {
         author: "Kainjock",
         license: "CC BY-SA 4.0",
@@ -419,9 +429,10 @@ export const malukuDestinations: Destination[] = [
     description:
       "Air sebening kaca dengan pondok-pondok di atas laut di pesisir Pulau Seram. Sering disebut surga tersembunyi Maluku — dan memang sepadan untuk menyeberang.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Pantai_Ora_%28Maluku%29_dari_Laut.jpg",
+      src: "/photos/destinasi/pantai-ora.jpg",
       alt: "Pantai Ora dan pondok-pondok di atas laut, dilihat dari laut, Pulau Seram",
-      credit: "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Ora_(Maluku)_dari_Laut.jpg",
+      credit:
+        "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Ora_(Maluku)_dari_Laut.jpg",
       source: {
         author: "Trifosa18",
         license: "CC BY-SA 4.0",
@@ -436,9 +447,10 @@ export const malukuDestinations: Destination[] = [
     description:
       "Kampung nelayan yang bersandar di kaki tebing Pulau Seram, gerbang menuju hutan Taman Nasional Manusela. Di sini laut bertemu rimba dalam satu pandangan.",
     image: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tebing_Desa_Sawai.jpg/960px-Tebing_Desa_Sawai.jpg",
+      src: "/photos/destinasi/sawai.jpg",
       alt: "Tebing kapur di tepi laut dekat Desa Sawai, Pulau Seram",
-      credit: "Ipaenin — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Tebing_Desa_Sawai.jpg",
+      credit:
+        "Ipaenin — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Tebing_Desa_Sawai.jpg",
       source: {
         author: "Ipaenin",
         license: "CC BY-SA 4.0",
@@ -453,14 +465,13 @@ export const malukuDestinations: Destination[] = [
     description:
       "Pulau kecil di barat Seram yang tersambung ke daratan lewat jembatan kayu panjang di atas laut dangkal yang jernih — berjalan di atas air sebelum sampai.",
     image: {
-      src: "https://images.pexels.com/photos/9071046/pexels-photo-9071046.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Jembatan kayu panjang membentang di atas laut jernih menuju pantai berpohon kelapa",
-      credit: "Pexels — https://www.pexels.com/photo/9071046/",
+      src: "/photos/destinasi/pulau-osi.jpg",
+      alt: "Jembatan kayu dan rumah-rumah panggung di atas laut jernih Pulau Osi, Seram Bagian Barat",
+      credit:
+        "Koran Jakarta — https://koran-jakarta.com/2024-01-04/pulau-osi-yang-keindahannya-selalu-memanggil-kembali",
       source: {
-        author: "Pexels",
-        license: "Pexels License",
-        url: "https://www.pexels.com/photo/9071046/",
-        licenseUrl: "https://www.pexels.com/license/",
+        author: "Koran Jakarta",
+        url: "https://koran-jakarta.com/2024-01-04/pulau-osi-yang-keindahannya-selalu-memanggil-kembali",
       },
     },
   },

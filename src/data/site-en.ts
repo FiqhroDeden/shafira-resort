@@ -284,7 +284,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A cliff with a natural sea-gate arch on the southern tip of Ambon Island — the backdrop almost everyone brings home from Ambon.",
     image: withAlt(
       pintuKotaID.image,
-      "Coastal rock cliff with a natural gate-like arch facing the sea",
+      "The holed rock cliff of Pintu Kota Beach facing the sea, Airlouw, Ambon Island",
     ),
   },
   {
@@ -328,7 +328,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A small island off western Seram, linked to the mainland by a long wooden bridge over clear shallow water — a walk across the sea before you arrive.",
     image: withAlt(
       osiID.image,
-      "A long wooden bridge stretching over clear water toward a palm-lined beach",
+      "Wooden bridge and stilt houses over the clear sea of Osi Island, West Seram",
     ),
   },
 ];

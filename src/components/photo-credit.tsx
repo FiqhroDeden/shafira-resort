@@ -31,7 +31,7 @@ export function PhotoCredit({
           ? `${label} · ${source.author}`
           : `${label}: ${source.author}`}
       </a>
-      {!isIllustration && (
+      {!isIllustration && source.license && source.licenseUrl && (
         <>
           {" · "}
           <a
