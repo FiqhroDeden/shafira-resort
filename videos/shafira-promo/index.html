@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Shafira Resort — Promo Reels</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Fraunces";
+        src: url("assets/fonts/fraunces-latin-600-normal.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Fraunces";
+        src: url("assets/fonts/fraunces-latin-400-italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "Albert Sans";
+        src: url("assets/fonts/albert-sans-latin-500-normal.woff2") format("woff2");
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: "Albert Sans";
+        src: url("assets/fonts/albert-sans-latin-700-normal.woff2") format("woff2");
+        font-weight: 700;
+      }
+
+      :root {
+        --ink: #12333b;
+        --ink-deep: #0b2228;
+        --ivory: #fbf7ef;
+        --sand: #f2e9d8;
+        --sunset: #c4653a;
+        --sunset-light: #f0a375;
+        --display: "Fraunces", Georgia, serif;
+        --sans: "Albert Sans", system-ui, sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--ink-deep);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--ink-deep);
+        font-family: var(--sans);
+        color: var(--ivory);
+      }
+
+      /* ---------- scene layers ---------- */
+      .scene {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .fill {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* landscape photos: wider-than-frame strip that pans */
+      .pan {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        max-width: none;
+      }
+      .shade-top {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 820px;
+        background: linear-gradient(180deg, rgba(11, 34, 40, 0.78) 0%, rgba(11, 34, 40, 0) 100%);
+      }
+      .shade-bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 900px;
+        background: linear-gradient(0deg, rgba(11, 34, 40, 0.85) 0%, rgba(11, 34, 40, 0) 100%);
+      }
+
+      /* ---------- typography ---------- */
+      .eyebrow {
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--sunset-light);
+      }
+      .title-block {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .display {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 128px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: var(--ivory);
+      }
+      .display-italic {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 1.1;
+        color: var(--sand);
+      }
+
+      /* unit label card (akomodasi) */
+      .unit {
+        position: absolute;
+        left: 80px;
+        top: 260px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .unit-name {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 104px;
+        line-height: 1;
+        color: var(--ivory);
+      }
+      .unit-meta {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 40px;
+        color: var(--sand);
+      }
+      .unit-price {
+        align-self: flex-start;
+        margin-top: 10px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: var(--sunset);
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 40px;
+        color: var(--ivory);
+      }
+
+      /* big price badge */
+      .price-badge {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 700px;
+        padding: 48px 56px;
+        border-radius: 36px;
+        background: var(--ivory);
+        color: var(--ink);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      }
+      .price-badge .lbl {
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 34px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--sunset);
+      }
+      .price-badge .amt {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 132px;
+        line-height: 1.05;
+        color: var(--ink);
+      }
+      .price-badge .per {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 40px;
+        color: var(--ink);
+      }
+
+      /* activity chips */
+      .chips {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 260px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+      }
+      .chip {
+        padding: 18px 34px;
+        border-radius: 999px;
+        background: rgba(251, 247, 239, 0.94);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 44px;
+      }
+      .chip em {
+        font-style: normal;
+        color: var(--sunset);
+      }
+
+      /* distance */
+      .distance {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .distance .big {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 150px;
+        line-height: 1;
+        color: var(--ivory);
+      }
+      .distance .small {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 48px;
+        color: var(--sand);
+      }
+
+      /* CTA */
+      .cta-ground {
+        position: absolute;
+        inset: 0;
+        background: var(--ink);
+      }
+      .cta-photo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.35;
+      }
+      .cta-tint {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(18, 51, 59, 0.55) 0%, rgba(11, 34, 40, 0.92) 70%);
+      }
+      .cta {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 300px;
+        bottom: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 28px;
+      }
+      .cta-logo {
+        width: 280px;
+        height: auto;
+        display: block;
+      }
+      .cta-name {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 120px;
+        line-height: 1;
+        color: var(--ivory);
+      }
+      .cta-tag {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 56px;
+        color: var(--sand);
+      }
+      .cta-btn {
+        margin-top: 24px;
+        padding: 30px 52px;
+        border-radius: 999px;
+        background: var(--sunset);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .cta-btn .t1 {
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 40px;
+        color: var(--ivory);
+      }
+      .cta-btn .t2 {
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 62px;
+        letter-spacing: 0.02em;
+        color: var(--ivory);
+      }
+      .cta-links {
+        font-family: var(--sans);
+        font-weight: 500;
+        font-size: 36px;
+        color: var(--sand);
+      }
+
+      /* captions */
+      .cap {
+        position: absolute;
+        left: 80px;
+        right: 120px;
+        top: 1330px;
+        display: flex;
+        justify-content: center;
+      }
+      .cap span {
+        display: block;
+        max-width: 880px;
+        padding: 18px 32px;
+        border-radius: 22px;
+        background: rgba(11, 34, 40, 0.72);
+        font-family: var(--sans);
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 1.25;
+        text-align: center;
+        color: var(--ivory);
+      }
+      .cap span b {
+        font-weight: 700;
+        color: var(--sunset-light);
+      }
+
+      #vid-tenang {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="38.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- ============ A · HOOK (0 – 5.0) ============ -->
+      <section id="s-hook" class="scene clip" data-start="0" data-duration="5.5" data-track-index="0">
+        <div id="hook-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div id="hook-kb" data-layout-allow-overflow class="fill">
+            <img class="photo" src="assets/img/hook-laut-pagi.jpg" alt="Laut pagi dari bawah pepohonan di Pantai Memit" />
+          </div>
+          <div class="shade-top"></div>
+          <div class="shade-bottom"></div>
+          <div class="title-block">
+            <div id="hook-eyebrow" class="eyebrow">Pantai Memit · Morella</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ B · WELCOME (5.0 – 10.3) ============ -->
+      <section id="s-welcome" class="scene clip" data-start="5" data-duration="5.8" data-track-index="1">
+        <div id="welcome-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <img id="welcome-pan" data-layout-allow-overflow class="pan" src="assets/img/hero-pantai-memit.jpg" alt="Shafira Resort dilihat dari laut Pantai Memit" />
+          <div class="shade-top"></div>
+          <div class="shade-bottom"></div>
+          <div class="title-block">
+            <div id="welcome-eyebrow" class="eyebrow">Selamat datang di</div>
+            <div id="welcome-title" class="display">Shafira Resort</div>
+            <div id="welcome-sub" class="display-italic">pesisir utara Pulau Ambon</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ C1 · VILA (10.3 – 12.45) ============ -->
+      <section id="s-vila" class="scene clip" data-start="10.3" data-duration="2.65" data-track-index="2">
+        <div id="vila-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <img id="vila-pan" data-layout-allow-overflow class="pan" src="assets/img/vila-besar.jpg" alt="Vila Besar Shafira Resort di malam hari" />
+          <div class="shade-top"></div>
+          <div class="unit">
+            <div id="vila-name" class="unit-name">Vila Besar</div>
+            <div id="vila-meta" class="unit-meta">untuk keluarga &amp; rombongan</div>
+            <div id="vila-price" class="unit-price">Rp1,5 jt / malam</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ C2 · KAMAR (12.45 – 14.25) ============ -->
+      <section id="s-kamar" class="scene clip" data-start="12.45" data-duration="2.3" data-track-index="3">
+        <div id="kamar-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div id="kamar-kb" data-layout-allow-overflow class="fill">
+            <img class="photo" src="assets/img/kamar.jpg" alt="Teras kamar Shafira Resort dengan kursi rotan" />
+          </div>
+          <div class="shade-top"></div>
+          <div class="unit">
+            <div id="kamar-name" class="unit-name">Kamar</div>
+            <div id="kamar-meta" class="unit-meta">nyaman untuk berdua</div>
+            <div id="kamar-price" class="unit-price">Rp500 rb / malam</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ C3 · GLAMPING + HARGA (14.25 – 19.6) ============ -->
+      <section id="s-glamping" class="scene clip" data-start="14.25" data-duration="5.85" data-track-index="4">
+        <div id="glamping-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div id="glamping-kb" data-layout-allow-overflow class="fill">
+            <img class="photo" src="assets/img/glamping.jpg" alt="Tenda glamping Shafira Resort dengan kasur" />
+          </div>
+          <div class="shade-top"></div>
+          <div class="unit">
+            <div id="glamping-name" class="unit-name">Glamping</div>
+            <div id="glamping-meta" class="unit-meta">di antara pohon kelapa</div>
+            <div id="glamping-price" class="unit-price">Rp350 rb / malam</div>
+          </div>
+          <div id="price-badge" class="price-badge">
+            <div class="lbl">Menginap mulai</div>
+            <div class="amt">Rp350.000</div>
+            <div class="per">per malam · tepat di bibir pantai</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ D1 · PERAHU & SNORKELING (19.6 – 22.65) ============ -->
+      <section id="s-perahu" class="scene clip" data-start="19.6" data-duration="3.55" data-track-index="5">
+        <div id="perahu-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div id="perahu-kb" data-layout-allow-overflow class="fill">
+            <img class="photo" src="assets/img/perahu.jpg" alt="Perahu Shafira di tepi Pantai Memit" />
+          </div>
+          <div class="shade-top"></div>
+          <div class="chips">
+            <div id="chip-perahu" class="chip">Perahu <em>bebas pakai</em></div>
+            <div id="chip-snorkel" class="chip">Snorkeling terumbu karang</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ D2 · SUNSET (22.65 – 25.3) ============ -->
+      <section id="s-sunset" class="scene clip" data-start="22.65" data-duration="3.15" data-track-index="6">
+        <div id="sunset-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <img id="sunset-pan" data-layout-allow-overflow class="pan" src="assets/img/sunset-dermaga.jpg" alt="Sunset di dermaga Pantai Memit" />
+          <div class="shade-top"></div>
+          <div class="chips">
+            <div id="chip-sunset" class="chip">Sunset di <em>dermaga</em></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ E · 1 JAM DARI AMBON (25.3 – 29.9) ============ -->
+      <video
+        id="vid-tenang"
+        class="clip"
+        src="assets/video/pemandangan-shafira-resort.mp4"
+        muted
+        playsinline
+        data-start="25.3"
+        data-duration="5.1"
+        data-media-start="3"
+        data-track-index="7"
+      ></video>
+      <section id="s-jarak" class="scene clip" data-start="25.3" data-duration="5.1" data-track-index="8">
+        <div id="jarak-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="shade-top"></div>
+          <div class="shade-bottom"></div>
+          <div class="distance">
+            <div id="jarak-eyebrow" class="eyebrow">Dekat, tapi terasa jauh</div>
+            <div id="jarak-big" class="big">± 1 jam</div>
+            <div id="jarak-small" class="small">dari Kota Ambon</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ F · CTA (29.9 – 38.6) ============ -->
+      <section id="s-cta" class="scene clip" data-start="29.9" data-duration="8.7" data-track-index="9">
+        <div id="cta-in" class="fill" data-layout-allow-overlap data-layout-allow-occlusion>
+          <div class="cta-ground"></div>
+          <img id="cta-bg" data-layout-allow-overflow class="cta-photo" src="assets/img/kursi-laut.jpg" alt="" />
+          <div class="cta-tint"></div>
+          <div class="cta">
+            <img id="cta-logo" class="cta-logo" src="assets/img/logo.png" alt="Logo Shafira Resort" />
+            <div id="cta-name" class="cta-name">Shafira Resort</div>
+            <div id="cta-tag" class="cta-tag">tepi laut yang tenang</div>
+            <div id="cta-btn" class="cta-btn">
+              <div class="t1">Pesan via WhatsApp</div>
+              <div class="t2">0822-3976-7944</div>
+            </div>
+            <div id="cta-links" class="cta-links">@resortsafiramemit · shafiraresort.com</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CAPTIONS (VO + 0.4s) ============ -->
+      <div id="cap-1" class="cap clip" data-start="0.5" data-duration="2.0" data-track-index="10"><span>Bayangkan bangun pagi…</span></div>
+      <div id="cap-2" class="cap clip" data-start="2.5" data-duration="2.4" data-track-index="10"><span>dan laut <b>Morella</b> sudah di depan mata.</span></div>
+      <div id="cap-3" class="cap clip" data-start="5.0" data-duration="2.0" data-track-index="10"><span>Selamat datang di <b>Shafira Resort</b>,</span></div>
+      <div id="cap-4" class="cap clip" data-start="7.0" data-duration="3.3" data-track-index="10"><span>di tepi <b>Pantai Memit</b>, pesisir utara Pulau Ambon.</span></div>
+      <div id="cap-5" class="cap clip" data-start="10.3" data-duration="2.15" data-track-index="10"><span>Pilih <b>Vila Besar</b> untuk keluarga,</span></div>
+      <div id="cap-6" class="cap clip" data-start="12.45" data-duration="1.8" data-track-index="10"><span><b>kamar</b> nyaman untuk berdua,</span></div>
+      <div id="cap-7" class="cap clip" data-start="14.25" data-duration="2.5" data-track-index="10"><span>atau <b>glamping</b> di antara pohon kelapa —</span></div>
+      <div id="cap-8" class="cap clip" data-start="16.75" data-duration="2.85" data-track-index="10"><span>mulai <b>Rp350.000</b> semalam.</span></div>
+      <div id="cap-9" class="cap clip" data-start="19.6" data-duration="3.05" data-track-index="10"><span>Dayung perahu, snorkeling di terumbu karang,</span></div>
+      <div id="cap-10" class="cap clip" data-start="22.65" data-duration="2.65" data-track-index="10"><span>lalu tutup hari dengan <b>sunset</b> di dermaga.</span></div>
+      <div id="cap-11" class="cap clip" data-start="25.3" data-duration="2.1" data-track-index="10"><span>Hanya satu jam dari Kota Ambon —</span></div>
+      <div id="cap-12" class="cap clip" data-start="27.4" data-duration="2.5" data-track-index="10"><span>tempat <b>healing</b> yang tenang menunggu Anda.</span></div>
+
+      <!-- ============ AUDIO ============ -->
+      <audio
+        id="narasi"
+        src="assets/audio/narasi-elevenlabs-v4.mp3"
+        data-start="0.4"
+        data-duration="34.32"
+        data-track-index="11"
+        data-volume="1"
+      ></audio>
+      <audio
+        id="ambience"
+        src="assets/audio/ambience-pantai.mp3"
+        data-start="0"
+        data-duration="38.6"
+        data-track-index="12"
+        data-volume="0.22"
+      ></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const ease = "power2.out";
+      const drift = "sine.inOut";
+
+      // crossfade in a scene's inner wrapper (the .clip itself is framework-owned)
+      const fadeIn = (sel, at, d = 0.5) => tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: d, ease: "none" }, at);
+      // text rise
+      const rise = (sel, at, d = 0.7) =>
+        tl.fromTo(sel, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: d, ease }, at);
+
+      // A · hook
+      tl.fromTo("#hook-kb", { scale: 1.0 }, { scale: 1.12, duration: 5.5, ease: drift }, 0);
+      fadeIn("#hook-in", 0, 0.6);
+      rise("#hook-eyebrow", 0.5);
+
+      // B · welcome — pan the wide hero across the vertical frame
+      fadeIn("#welcome-in", 5.0);
+      tl.fromTo("#welcome-pan", { x: -300 }, { x: -1600, duration: 5.8, ease: drift }, 5.0);
+      rise("#welcome-eyebrow", 5.15);
+      rise("#welcome-title", 5.35, 0.8);
+      rise("#welcome-sub", 7.1);
+
+      // C1 · vila
+      fadeIn("#vila-in", 10.3, 0.45);
+      tl.fromTo("#vila-pan", { x: -500 }, { x: -820, duration: 2.65, ease: drift }, 10.3);
+      rise("#vila-name", 10.4);
+      rise("#vila-meta", 10.6);
+      rise("#vila-price", 10.85, 0.6);
+
+      // C2 · kamar
+      fadeIn("#kamar-in", 12.45, 0.45);
+      tl.fromTo("#kamar-kb", { scale: 1.12 }, { scale: 1.0, duration: 2.3, ease: drift }, 12.45);
+      rise("#kamar-name", 12.55);
+      rise("#kamar-meta", 12.75);
+      rise("#kamar-price", 12.95, 0.6);
+
+      // C3 · glamping + price badge on "mulai Rp350.000"
+      fadeIn("#glamping-in", 14.25, 0.45);
+      tl.fromTo("#glamping-kb", { scale: 1.0 }, { scale: 1.14, duration: 5.85, ease: drift }, 14.25);
+      rise("#glamping-name", 14.35);
+      rise("#glamping-meta", 14.55);
+      rise("#glamping-price", 14.75, 0.6);
+      tl.fromTo(
+        "#price-badge",
+        { opacity: 0, y: 80, scale: 0.92 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.6)" },
+        16.75
+      );
+
+      // D1 · perahu + snorkeling
+      fadeIn("#perahu-in", 19.6, 0.5);
+      tl.fromTo("#perahu-kb", { scale: 1.12, y: 0 }, { scale: 1.0, y: -40, duration: 3.55, ease: drift }, 19.6);
+      tl.fromTo("#chip-perahu", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease }, 19.75);
+      tl.fromTo("#chip-snorkel", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease }, 20.6);
+
+      // D2 · sunset
+      fadeIn("#sunset-in", 22.65, 0.5);
+      tl.fromTo("#sunset-pan", { x: -380, scale: 1.0 }, { x: -620, scale: 1.05, duration: 3.15, ease: drift }, 22.65);
+      tl.fromTo("#chip-sunset", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease }, 23.4);
+
+      // E · distance (video underneath)
+      fadeIn("#jarak-in", 25.3, 0.5);
+      rise("#jarak-eyebrow", 25.4);
+      tl.fromTo("#jarak-big", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.4)" }, 25.55);
+      rise("#jarak-small", 25.95);
+
+      // F · CTA
+      fadeIn("#cta-in", 29.9, 0.6);
+      tl.fromTo("#cta-bg", { scale: 1.0 }, { scale: 1.1, duration: 8.7, ease: drift }, 29.9);
+      tl.fromTo("#cta-logo", { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease }, 30.1);
+      rise("#cta-btn", 30.4, 0.7);
+      rise("#cta-name", 32.0, 0.8);
+      rise("#cta-tag", 32.9, 0.8);
+      rise("#cta-links", 34.0);
+      tl.fromTo("#cta-btn", { scale: 1 }, { scale: 1.05, duration: 0.6, ease: "sine.inOut", yoyo: true, repeat: 3 }, 35.0);
+
+      // captions: soft pop-in for each phrase
+      tl.fromTo("#cap-1 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 0.5);
+      tl.fromTo("#cap-2 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 2.5);
+      tl.fromTo("#cap-3 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 5.0);
+      tl.fromTo("#cap-4 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 7.0);
+      tl.fromTo("#cap-5 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 10.3);
+      tl.fromTo("#cap-6 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 12.45);
+      tl.fromTo("#cap-7 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 14.25);
+      tl.fromTo("#cap-8 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 16.75);
+      tl.fromTo("#cap-9 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 19.6);
+      tl.fromTo("#cap-10 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 22.65);
+      tl.fromTo("#cap-11 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 25.3);
+      tl.fromTo("#cap-12 span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.25, ease }, 27.4);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
