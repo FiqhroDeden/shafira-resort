@@ -17,6 +17,7 @@ export function getContent(locale: Locale) {
       heroImage: en.heroImageEN,
       introImages: en.introImagesEN,
       ctaImage: en.ctaImageEN,
+      locationImage: en.locationImageEN,
       galleryImages: en.galleryImagesEN,
     };
   }
@@ -31,6 +32,7 @@ export function getContent(locale: Locale) {
     heroImage: id.heroImage,
     introImages: id.introImages,
     ctaImage: id.ctaImage,
+    locationImage: id.locationImage,
     galleryImages: id.galleryImages,
   };
 }

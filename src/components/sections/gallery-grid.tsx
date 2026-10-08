@@ -1,18 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "@/components/reveal";
 import type { SiteImage } from "@/data/site";
 
-/* Pola mosaik 4 kolom (desktop): 1 foto besar, 1 foto tinggi, sisanya mengisi */
+/* Pola mosaik 4 kolom (desktop): 1 foto besar, 1 tile tinggi (video potret), sisanya mengisi */
 const spans = [
   "md:col-span-2 md:row-span-2",
   "",
-  "md:row-span-2",
+  "row-span-2",
   "",
   "md:col-span-2",
-  "col-span-2",
+  "",
+  "col-span-2 md:col-span-1",
 ];
 
 /** Versi teroptimasi next/image (webp, jauh lebih kecil dari sumber asli) */
@@ -54,6 +56,11 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
   }, [images]);
 
   async function open(img: SiteImage) {
+    if (img.video) {
+      setActive(img);
+      dialogRef.current?.showModal();
+      return;
+    }
     // Muat penuh dulu agar tidak sempat menampilkan foto sebelumnya
     const pre = new window.Image();
     pre.src = optimized(img.src);
@@ -83,7 +90,7 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
               onClick={() => open(img)}
               onMouseEnter={() => preload(img.src)}
               onFocus={() => preload(img.src)}
-              aria-label={`Perbesar foto: ${img.alt}`}
+              aria-label={`${img.video ? "Putar video" : "Perbesar foto"}: ${img.alt}`}
               className="group relative block h-full w-full cursor-zoom-in overflow-hidden rounded-xl"
             >
               <Image
@@ -93,6 +100,13 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
                 sizes="(min-width: 768px) 25vw, 50vw"
                 className="img-drift object-cover"
               />
+              {img.video && (
+                <span className="absolute inset-0 grid place-items-center bg-ink/15 transition-colors group-hover:bg-ink/25">
+                  <span className="grid size-14 place-items-center rounded-full bg-white/90 text-ink shadow-lg transition-transform group-hover:scale-105">
+                    <Play className="ml-0.5 size-6 fill-current" aria-hidden />
+                  </span>
+                </span>
+              )}
             </button>
           </Reveal>
         ))}
@@ -101,9 +115,22 @@ export function GalleryGrid({ images }: { images: SiteImage[] }) {
       <dialog
         ref={dialogRef}
         onClick={() => dialogRef.current?.close()}
+        onClose={() => setActive(null)}
         className="m-auto max-w-none cursor-zoom-out bg-transparent p-4 backdrop:bg-ink/85"
       >
-        {active && (
+        {active?.video ? (
+          <video
+            key={active.video}
+            src={active.video}
+            poster={active.src}
+            controls
+            autoPlay
+            playsInline
+            onClick={(e) => e.stopPropagation()}
+            aria-label={active.alt}
+            className="max-h-[90vh] max-w-[92vw] cursor-auto rounded-lg shadow-2xl"
+          />
+        ) : active && (
           // eslint-disable-next-line @next/next/no-img-element -- ukuran dinamis, dimuat hanya saat diklik
           <img
             key={active.src}

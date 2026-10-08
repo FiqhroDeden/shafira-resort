@@ -68,7 +68,7 @@ export function Intro({ locale = "id" }: { locale?: Locale }) {
                 alt={introImages.landscape.alt}
                 fill
                 sizes="(min-width: 1024px) 24vw, 46vw"
-                className="object-cover"
+                className="object-cover object-bottom"
               />
             </div>
           </Reveal>
