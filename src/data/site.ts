@@ -301,40 +301,6 @@ export const destinations: Destination[] = [
     },
   },
   {
-    name: "Mata Air Belanda",
-    distance: "± 15 menit berkendara",
-    description:
-      "Mata air alami yang mengalir langsung ke laut — air tawar sejuk bertemu air laut hangat di satu titik. Tempat mandi favorit sejak zaman kolonial.",
-    image: {
-      src: "https://images.pexels.com/photos/35269348/pexels-photo-35269348.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Pantai tenang berair jernih dengan hutan hijau lebat di belakangnya",
-      credit: "Pexels — https://www.pexels.com/photo/35269348/",
-      source: {
-        author: "Pexels",
-        license: "Pexels License",
-        url: "https://www.pexels.com/photo/35269348/",
-        licenseUrl: "https://www.pexels.com/license/",
-      },
-    },
-  },
-  {
-    name: "Benteng Kapahaha",
-    distance: "± 30 menit jalan kaki mendaki",
-    description:
-      "Situs sejarah perjuangan rakyat Morella melawan penjajah di atas bukit. Dari puncaknya, laut Seram terhampar — sepadan dengan pendakiannya.",
-    image: {
-      src: "https://images.pexels.com/photos/8300514/pexels-photo-8300514.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Pemandangan dari ketinggian ke arah pantai berbatu dan laut jernih",
-      credit: "Pexels — https://www.pexels.com/photo/8300514/",
-      source: {
-        author: "Pexels",
-        license: "Pexels License",
-        url: "https://www.pexels.com/photo/8300514/",
-        licenseUrl: "https://www.pexels.com/license/",
-      },
-    },
-  },
-  {
     name: "Pantai Liang (Hunimua)",
     distance: "± 30 menit berkendara",
     description:
@@ -538,7 +504,7 @@ export const faqs: Faq[] = [
   {
     question: "Apa saja yang bisa dilakukan di Shafira Resort dan sekitarnya?",
     answer:
-      "Di dalam resort: berenang di laut jernih, mendayung perahu, snorkeling di depan pantai, bakar ikan dengan peralatan masak yang disediakan, atau bersantai di gazebo. Di sekitarnya ada spot snorkeling Pantai Lubang Buaya (± 10 menit), Mata Air Belanda, situs sejarah Benteng Kapahaha, dan Pantai Liang (Hunimua) yang terkenal.",
+      "Di dalam resort: berenang di laut jernih, mendayung perahu, snorkeling di depan pantai, bakar ikan dengan peralatan masak yang disediakan, atau bersantai di gazebo. Di sekitarnya ada spot snorkeling Pantai Lubang Buaya (± 10 menit) dan Pantai Liang (Hunimua) yang terkenal.",
   },
   {
     question: "Apakah ada sinyal internet di resort?",

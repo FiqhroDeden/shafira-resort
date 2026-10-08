@@ -39,7 +39,7 @@ export const copy = {
       stats: [
         { value: "± 1 jam", label: "berkendara dari pusat Kota Ambon" },
         { value: "3", label: "pilihan cara menginap" },
-        { value: "5", label: "destinasi wisata di sekitar resort" },
+        { value: "3", label: "destinasi wisata di sekitar resort" },
       ],
     },
     rooms: {
@@ -156,8 +156,7 @@ export const copy = {
       exploreHeading: "Jelajahi",
       roomsLink: "Akomodasi & Harga",
       copyright: "Shafira Resort, Negeri Morella.",
-      photoNotePre: "Foto sementara dari",
-      photoNotePost: "— akan diganti foto asli resort.",
+      photoNote: "Foto destinasi milik pemotretnya masing-masing — sumber tercantum di tiap foto.",
       credit: "Dibuat oleh",
       footerNavLabel: "Navigasi footer",
     },
@@ -206,7 +205,7 @@ export const copy = {
       stats: [
         { value: "± 1 hr", label: "drive from downtown Ambon" },
         { value: "3", label: "ways to stay" },
-        { value: "5", label: "destinations near the resort" },
+        { value: "3", label: "destinations near the resort" },
       ],
     },
     rooms: {
@@ -323,8 +322,7 @@ export const copy = {
       exploreHeading: "Explore",
       roomsLink: "Rooms & Rates",
       copyright: "Shafira Resort, Morella Village.",
-      photoNotePre: "Temporary photos from",
-      photoNotePost: "— to be replaced with the resort's own.",
+      photoNote: "Destination photos belong to their photographers — sources are credited on each photo.",
       credit: "Built by",
       footerNavLabel: "Footer navigation",
     },
