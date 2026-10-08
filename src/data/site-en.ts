@@ -368,11 +368,11 @@ export const heroImageEN: SiteImage = withAlt(
 export const introImagesEN = {
   portrait: withAlt(
     introImages.portrait,
-    "A long wooden pier leading to a palm-thatched gazebo over calm sea",
+    "Beachfront gazebos at Shafira Resort with a colorful stone garden",
   ),
   landscape: withAlt(
     introImages.landscape,
-    "Wooden boat moving through clear water with green trees behind",
+    "The Resort Shafira boat on a rocky beach with shade trees and the Morella sea",
   ),
 };
 

@@ -485,14 +485,14 @@ export const heroImage: SiteImage = {
 
 export const introImages: { portrait: SiteImage; landscape: SiteImage } = {
   portrait: {
-    src: "https://images.pexels.com/photos/18363516/pexels-photo-18363516.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Dermaga kayu panjang menuju gazebo beratap daun kelapa di atas laut tenang",
-    credit: "Pexels — https://www.pexels.com/photo/18363516/",
+    src: "/photos/galeri/foto-3.jpg",
+    alt: "Gazebo-gazebo tepi laut di Shafira Resort dengan taman batu warna-warni",
+    credit: "Foto asli Shafira Resort",
   },
   landscape: {
-    src: "https://images.pexels.com/photos/9802332/pexels-photo-9802332.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    alt: "Perahu kayu melaju di air laut jernih dengan latar pepohonan hijau",
-    credit: "Pexels — https://www.pexels.com/photo/9802332/",
+    src: "/photos/galeri/foto-4.jpg",
+    alt: "Perahu Resort Shafira di pantai berkarang dengan pohon rindang dan laut Morella",
+    credit: "Foto asli Shafira Resort",
   },
 };
 
