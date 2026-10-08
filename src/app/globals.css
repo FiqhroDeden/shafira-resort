@@ -14,6 +14,7 @@
   --color-palm: #46604f; /* hijau tropis redup — sekunder */
   --color-sunset: #c4653a; /* SATU-SATUNYA aksen: CTA, harga, eyebrow */
   --color-sunset-deep: #a0512c; /* hover aksen */
+  --color-sunset-light: #f0a375; /* aksen di atas foto gelap (hero) */
   --color-mist: #64757a; /* teks sekunder di latar terang */
   --color-foam: #f8f3e9cc;
 
@@ -83,4 +84,11 @@ html {
   .group:hover .img-drift {
     transform: scale(1.045);
   }
+}
+
+/* Bayangan lembut agar teks hero tetap terbaca di atas foto yang ramai */
+.hero-text-shadow {
+  text-shadow:
+    0 1px 2px rgb(11 34 40 / 0.45),
+    0 2px 18px rgb(11 34 40 / 0.35);
 }

@@ -53,7 +53,9 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 text-ivory transition-colors duration-300 ${
-        scrolled ? "bg-ink-deep/95 shadow-lg backdrop-blur-sm" : ""
+        scrolled
+          ? "bg-ink-deep/95 shadow-lg backdrop-blur-sm"
+          : "hero-text-shadow"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8 md:py-7">
@@ -71,7 +73,11 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
             className="h-9 w-auto md:h-11"
           />
           <span className="font-display text-xl tracking-wide md:text-2xl">
-            Shafira<span className="text-sunset"> Resort</span>
+            Shafira
+            <span className={scrolled ? "text-sunset" : "text-sunset-light"}>
+              {" "}
+              Resort
+            </span>
           </span>
         </Link>
 
@@ -84,7 +90,7 @@ export function SiteHeader({ locale = "id" }: { locale?: Locale }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm tracking-wide text-ivory/85 transition-colors hover:text-ivory"
+                className="text-sm tracking-wide text-ivory/90 transition-colors hover:text-ivory"
               >
                 {link.label}
               </Link>
