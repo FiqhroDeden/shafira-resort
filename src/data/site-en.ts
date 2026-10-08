@@ -14,6 +14,7 @@ import {
   galleryImages,
   heroImage,
   introImages,
+  locationImage,
   malukuDestinations,
   site,
   type Accommodation,
@@ -210,7 +211,7 @@ export const destinationsEN: Destination[] = [
       "Morella's most famous snorkeling and diving spot. The water is glass-clear — fish swim right up to the entry steps on the shoreline.",
     image: withAlt(
       lubangBuayaID.image,
-      "Colorful coral reef with schools of fish in the clear waters of Morella",
+      "Clear water at the Lubang Buaya snorkeling spot, Morella",
     ),
   },
   {
@@ -243,7 +244,7 @@ export const destinationsEN: Destination[] = [
       "Nearly a kilometer of fine white sand, once named by the UNDP among the most beautiful beaches in Indonesia.",
     image: withAlt(
       liangID.image,
-      "Stretch of white-sand beach with turquoise water",
+      "White sand and clear blue sea at Liang Beach, Central Maluku",
     ),
   },
   {
@@ -272,7 +273,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A gently shelving bay east of Ambon city, famous for its Natsepa rujak (fruit salad). Calm water for an easy swim, late afternoons for sitting out with a plate of rujak.",
     image: withAlt(
       natsepaID.image,
-      "Tropical white-sand beach with a palm leaning over clear blue water",
+      "Natsepa Beach in Suli, Ambon Island",
     ),
   },
   {
@@ -294,7 +295,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A colonial-era stone fort in Hila on the Leihitu coast — a close neighbor of Morella. Its old tower and walls still stand, holding the long story of the Maluku spice trade.",
     image: withAlt(
       amsterdamID.image,
-      "Walls and tower of an old stone fort under an evening sky",
+      "Fort Amsterdam in Hila village, Leihitu, Ambon Island",
     ),
   },
   {
@@ -305,7 +306,7 @@ export const malukuDestinationsEN: Destination[] = [
       "Glass-clear water with cottages built over the sea on the coast of Seram Island. Often called Maluku's hidden paradise — and well worth the crossing.",
     image: withAlt(
       oraID.image,
-      "Very clear turquoise sea with a sandy edge and a hilly headland",
+      "Ora Beach and its over-water cottages seen from the sea, Seram Island",
     ),
   },
   {
@@ -316,7 +317,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A fishing village tucked against the cliff-foot of Seram Island, the gateway into the Manusela National Park jungle. Here the sea meets the rainforest in a single view.",
     image: withAlt(
       sawaiID.image,
-      "Coastal village on a forested headland with a beach and surf",
+      "Limestone sea cliffs near Sawai village, Seram Island",
     ),
   },
   {
@@ -376,9 +377,14 @@ export const introImagesEN = {
   ),
 };
 
+export const locationImageEN: SiteImage = withAlt(
+  locationImage,
+  "Wooden cottage and grassy grounds facing the sea at Shafira Resort, Morella",
+);
+
 export const ctaImageEN: SiteImage = withAlt(
   ctaImage,
-  "Orange sunset behind the pier and gazebo of Shafira Resort on Memit Beach, Morella",
+  "Sunset over the sea from Memit Beach, Shafira Resort Morella",
 );
 
 const galleryAltsEN = [

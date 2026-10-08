@@ -2,14 +2,13 @@ import Image from "next/image";
 import { MapPin, Navigation } from "lucide-react";
 import { copy } from "@/data/copy";
 import { getContent, type Locale } from "@/data/i18n";
-import { introImages } from "@/data/site";
 import { Reveal } from "@/components/reveal";
 
 /* Peta lokasi tanpa iframe: foto asli + tautan langsung ke Google Maps */
 export function Location({ locale = "id" }: { locale?: Locale }) {
   const t = copy[locale];
   const l = t.location;
-  const { site } = getContent(locale);
+  const { site, locationImage } = getContent(locale);
   const { address, geo } = site;
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${geo.lat},${geo.lng}`;
 
@@ -17,8 +16,8 @@ export function Location({ locale = "id" }: { locale?: Locale }) {
     <section id={t.anchors.location} className="relative overflow-hidden">
       <div className="relative min-h-[30rem] md:min-h-[34rem]">
         <Image
-          src={introImages.portrait.src}
-          alt={introImages.portrait.alt}
+          src={locationImage.src}
+          alt={locationImage.alt}
           fill
           sizes="100vw"
           className="object-cover"

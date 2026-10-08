@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { copy } from "@/data/copy";
 import { getContent, type Locale } from "@/data/i18n";
+import { PhotoCredit } from "@/components/photo-credit";
 import { Reveal } from "@/components/reveal";
 
 export function Destinations({ locale = "id" }: { locale?: Locale }) {
@@ -40,6 +41,7 @@ export function Destinations({ locale = "id" }: { locale?: Locale }) {
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
                 />
+                <PhotoCredit source={featured.image.source} locale={locale} />
               </div>
               <div className="absolute inset-x-0 bottom-0 p-7 text-ivory md:p-9">
                 <p className="mb-2 flex items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ivory/80">
@@ -71,6 +73,7 @@ export function Destinations({ locale = "id" }: { locale?: Locale }) {
                     aria-hidden="true"
                     className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent"
                   />
+                  <PhotoCredit source={d.image.source} locale={locale} />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 text-ivory md:p-7">
                   <p className="mb-2 flex items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ivory/80">

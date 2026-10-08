@@ -14,6 +14,8 @@ export type SiteImage = {
   alt: string;
   /** Sumber foto sementara (Pexels). Ganti dengan foto asli resort bila sudah ada. */
   credit: string;
+  /** Sumber foto pihak ketiga — ditampilkan sebagai keterangan di atas foto */
+  source?: { author: string; license: string; url: string; licenseUrl: string };
   /** Jika ada, item ini adalah video; `src` dipakai sebagai poster. */
   video?: string;
 };
@@ -280,9 +282,15 @@ export const destinations: Destination[] = [
     description:
       "Spot snorkeling dan diving paling terkenal di Morella. Airnya sebening kaca — ikan berenang sampai ke tepian, bahkan terlihat dari atas tangga masuknya.",
     image: {
-      src: "/photos/snorkeling-terumbu-karang-morella.jpg",
-      alt: "Terumbu karang warna-warni dengan kawanan ikan di laut jernih Morella",
-      credit: "Foto asli Shafira Resort",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Lubang_Buaya_Ambon.jpg/960px-Lubang_Buaya_Ambon.jpg",
+      alt: "Air laut jernih di spot snorkeling Lubang Buaya, Morella",
+      credit: "Ilham097 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lubang_Buaya_Ambon.jpg",
+      source: {
+        author: "Ilham097",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Lubang_Buaya_Ambon.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -294,6 +302,12 @@ export const destinations: Destination[] = [
       src: "https://images.pexels.com/photos/35269348/pexels-photo-35269348.jpeg?auto=compress&cs=tinysrgb&w=1920",
       alt: "Pantai tenang berair jernih dengan hutan hijau lebat di belakangnya",
       credit: "Pexels — https://www.pexels.com/photo/35269348/",
+      source: {
+        author: "Pexels",
+        license: "Pexels License",
+        url: "https://www.pexels.com/photo/35269348/",
+        licenseUrl: "https://www.pexels.com/license/",
+      },
     },
   },
   {
@@ -305,6 +319,12 @@ export const destinations: Destination[] = [
       src: "https://images.pexels.com/photos/8300514/pexels-photo-8300514.jpeg?auto=compress&cs=tinysrgb&w=1920",
       alt: "Pemandangan dari ketinggian ke arah pantai berbatu dan laut jernih",
       credit: "Pexels — https://www.pexels.com/photo/8300514/",
+      source: {
+        author: "Pexels",
+        license: "Pexels License",
+        url: "https://www.pexels.com/photo/8300514/",
+        licenseUrl: "https://www.pexels.com/license/",
+      },
     },
   },
   {
@@ -313,9 +333,15 @@ export const destinations: Destination[] = [
     description:
       "Pantai pasir putih sepanjang hampir satu kilometer yang pernah dinobatkan UNDP sebagai salah satu pantai terindah di Indonesia.",
     image: {
-      src: "https://images.pexels.com/photos/18558249/pexels-photo-18558249/free-photo-of-a-sandy-beach-with-clear-water-and-white-sand.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Hamparan pantai pasir putih dengan air laut biru kehijauan",
-      credit: "Pexels — https://www.pexels.com/photo/18558249/",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Pantai_Liang%2C_Maluku.jpg/1280px-Pantai_Liang%2C_Maluku.jpg",
+      alt: "Pasir putih dan laut biru jernih di Pantai Liang, Maluku Tengah",
+      credit: "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Liang,_Maluku.jpg",
+      source: {
+        author: "Trifosa18",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Pantai_Liang,_Maluku.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -332,8 +358,9 @@ export const destinations: Destination[] = [
 ];
 
 /* Destinasi Maluku yang lebih luas (Pulau Ambon + Pulau Seram). `distance`
-   dipakai sebagai label pulau/perjalanan, bukan estimasi menit. Foto Pexels
-   sementara — pemilik dapat mengganti dengan foto asli tiap destinasi. */
+   dipakai sebagai label pulau/perjalanan, bukan estimasi menit. Foto dari
+   Wikimedia Commons (lisensi bebas, wajib atribusi); yang belum ada di Commons
+   masih memakai foto ilustrasi Pexels. */
 export const malukuDestinations: Destination[] = [
   {
     name: "Pantai Natsepa",
@@ -341,9 +368,15 @@ export const malukuDestinations: Destination[] = [
     description:
       "Teluk berpasir landai di timur Kota Ambon, terkenal dengan rujak Natsepa-nya. Air tenang untuk berenang santai, sore hari untuk duduk-duduk sambil makan rujak.",
     image: {
-      src: "https://images.pexels.com/photos/2549017/pexels-photo-2549017.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Pantai tropis berpasir putih dengan pohon kelapa condong ke laut biru jernih",
-      credit: "Pexels — https://www.pexels.com/photo/2549017/",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg/1280px-Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
+      alt: "Pantai Natsepa di Suli, Pulau Ambon",
+      credit: "MuhammadIsra48 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
+      source: {
+        author: "MuhammadIsra48",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Lokasi_Wisata_Pantai_Natsepa_Ambon.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -355,6 +388,12 @@ export const malukuDestinations: Destination[] = [
       src: "https://images.pexels.com/photos/34334845/pexels-photo-34334845.jpeg?auto=compress&cs=tinysrgb&w=1920",
       alt: "Tebing karang dengan lubang alami menyerupai gerbang, menghadap laut",
       credit: "Pexels — https://www.pexels.com/photo/34334845/",
+      source: {
+        author: "Pexels",
+        license: "Pexels License",
+        url: "https://www.pexels.com/photo/34334845/",
+        licenseUrl: "https://www.pexels.com/license/",
+      },
     },
   },
   {
@@ -363,9 +402,15 @@ export const malukuDestinations: Destination[] = [
     description:
       "Benteng batu peninggalan kolonial di Negeri Hila, pesisir Leihitu — tetangga dekat Morella. Menara dan tembok tuanya masih berdiri, menyimpan cerita panjang perdagangan rempah Maluku.",
     image: {
-      src: "https://images.pexels.com/photos/9551082/pexels-photo-9551082.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Tembok dan menara benteng batu tua di bawah langit senja",
-      credit: "Pexels — https://www.pexels.com/photo/9551082/",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Benteng_Amsterdam.jpg/1280px-Benteng_Amsterdam.jpg",
+      alt: "Bangunan Benteng Amsterdam di Negeri Hila, Leihitu, Pulau Ambon",
+      credit: "Kainjock — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Benteng_Amsterdam.jpg",
+      source: {
+        author: "Kainjock",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Benteng_Amsterdam.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -374,9 +419,15 @@ export const malukuDestinations: Destination[] = [
     description:
       "Air sebening kaca dengan pondok-pondok di atas laut di pesisir Pulau Seram. Sering disebut surga tersembunyi Maluku — dan memang sepadan untuk menyeberang.",
     image: {
-      src: "https://images.pexels.com/photos/30652930/pexels-photo-30652930.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Laut biru toska sangat jernih dengan tepi pasir dan tanjung berbukit",
-      credit: "Pexels — https://www.pexels.com/photo/30652930/",
+      src: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Pantai_Ora_%28Maluku%29_dari_Laut.jpg",
+      alt: "Pantai Ora dan pondok-pondok di atas laut, dilihat dari laut, Pulau Seram",
+      credit: "Trifosa18 — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Pantai_Ora_(Maluku)_dari_Laut.jpg",
+      source: {
+        author: "Trifosa18",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Pantai_Ora_(Maluku)_dari_Laut.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -385,9 +436,15 @@ export const malukuDestinations: Destination[] = [
     description:
       "Kampung nelayan yang bersandar di kaki tebing Pulau Seram, gerbang menuju hutan Taman Nasional Manusela. Di sini laut bertemu rimba dalam satu pandangan.",
     image: {
-      src: "https://images.pexels.com/photos/12895836/pexels-photo-12895836.jpeg?auto=compress&cs=tinysrgb&w=1920",
-      alt: "Kampung pesisir di tanjung berhutan hijau dengan pantai dan ombak",
-      credit: "Pexels — https://www.pexels.com/photo/12895836/",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Tebing_Desa_Sawai.jpg/960px-Tebing_Desa_Sawai.jpg",
+      alt: "Tebing kapur di tepi laut dekat Desa Sawai, Pulau Seram",
+      credit: "Ipaenin — Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Tebing_Desa_Sawai.jpg",
+      source: {
+        author: "Ipaenin",
+        license: "CC BY-SA 4.0",
+        url: "https://commons.wikimedia.org/wiki/File:Tebing_Desa_Sawai.jpg",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
     },
   },
   {
@@ -399,6 +456,12 @@ export const malukuDestinations: Destination[] = [
       src: "https://images.pexels.com/photos/9071046/pexels-photo-9071046.jpeg?auto=compress&cs=tinysrgb&w=1920",
       alt: "Jembatan kayu panjang membentang di atas laut jernih menuju pantai berpohon kelapa",
       credit: "Pexels — https://www.pexels.com/photo/9071046/",
+      source: {
+        author: "Pexels",
+        license: "Pexels License",
+        url: "https://www.pexels.com/photo/9071046/",
+        licenseUrl: "https://www.pexels.com/license/",
+      },
     },
   },
 ];
@@ -496,9 +559,15 @@ export const introImages: { portrait: SiteImage; landscape: SiteImage } = {
   },
 };
 
+export const locationImage: SiteImage = {
+  src: "/photos/galeri/foto-6.jpg",
+  alt: "Cottage kayu dan halaman rumput menghadap laut di Shafira Resort, Morella",
+  credit: "Foto asli Shafira Resort",
+};
+
 export const ctaImage: SiteImage = {
-  src: "/photos/sunset-dermaga-pantai-memit.jpg",
-  alt: "Matahari terbenam jingga di balik dermaga dan gazebo Shafira Resort, Pantai Memit Morella",
+  src: "/photos/galeri/foto-2.jpg",
+  alt: "Matahari terbenam di laut dari tepi Pantai Memit, Shafira Resort Morella",
   credit: "Foto asli Shafira Resort",
 };
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { MapPin } from "lucide-react";
 import { copy } from "@/data/copy";
 import { getContent, type Locale } from "@/data/i18n";
+import { PhotoCredit } from "@/components/photo-credit";
 import { Reveal } from "@/components/reveal";
 
 export function Maluku({ locale = "id" }: { locale?: Locale }) {
@@ -44,6 +45,7 @@ export function Maluku({ locale = "id" }: { locale?: Locale }) {
                     aria-hidden="true"
                     className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent"
                   />
+                  <PhotoCredit source={d.image.source} locale={locale} />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
                   <p className="mb-2 flex items-center gap-1.5 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-ivory/80">
