@@ -26,8 +26,8 @@ export function Destinations({ locale = "id" }: { locale?: Locale }) {
         </Reveal>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {/* Kartu unggulan lebih lebar */}
-          <Reveal className="md:col-span-2">
+          {/* Kartu unggulan lebar; di desktop dua kartu lain bertumpuk di kolom kanan */}
+          <Reveal className="md:col-span-2 lg:row-span-2">
             <article className="group relative h-full overflow-hidden rounded-2xl">
               <div className="relative aspect-[16/10] md:aspect-auto md:h-full md:min-h-[24rem]">
                 <Image
@@ -61,7 +61,7 @@ export function Destinations({ locale = "id" }: { locale?: Locale }) {
           {rest.map((d, i) => (
             <Reveal key={d.name} delay={(i % 2) * 0.1}>
               <article className="group relative h-full overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/5]">
+                <div className="relative aspect-[4/5] lg:aspect-[4/3]">
                   <Image
                     src={d.image.src}
                     alt={d.image.alt}

@@ -139,18 +139,7 @@ export function SiteFooter({ locale = "id" }: { locale?: Locale }) {
               Fiqhro Dedhen
             </a>
           </p>
-          <p>
-            {t.footer.photoNotePre}{" "}
-            <a
-              href="https://www.pexels.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-ivory/30 underline-offset-2 transition-colors hover:text-ivory/70"
-            >
-              Pexels
-            </a>{" "}
-            {t.footer.photoNotePost}
-          </p>
+          <p>{t.footer.photoNote}</p>
         </div>
       </div>
     </footer>

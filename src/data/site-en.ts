@@ -199,8 +199,7 @@ export const facilitiesEN: Facility[] = [
 ];
 
 /* TODO: jarak/waktu tempuh estimasi konservatif (mengikuti site.ts) */
-const [lubangBuayaID, airBelandaID, kapahahaID, liangID, memitID] =
-  destinations;
+const [lubangBuayaID, liangID, memitID] = destinations;
 
 export const destinationsEN: Destination[] = [
   {
@@ -212,28 +211,6 @@ export const destinationsEN: Destination[] = [
     image: withAlt(
       lubangBuayaID.image,
       "Clear water at the Lubang Buaya snorkeling spot, Morella",
-    ),
-  },
-  {
-    ...airBelandaID,
-    name: "Air Belanda Spring",
-    distance: "± 15 minutes by car",
-    description:
-      "A natural spring that flows straight into the sea — cool freshwater meets warm saltwater at a single point. A favorite bathing spot since colonial times.",
-    image: withAlt(
-      airBelandaID.image,
-      "Calm clear-water beach backed by dense green forest",
-    ),
-  },
-  {
-    ...kapahahaID,
-    name: "Kapahaha Fortress",
-    distance: "± 30-minute uphill walk",
-    description:
-      "A hilltop site of Morella's resistance against colonial forces. From the top, the Seram Sea stretches wide — worth every step of the climb.",
-    image: withAlt(
-      kapahahaID.image,
-      "View from a height over a rocky shore and clear sea",
     ),
   },
   {
@@ -284,7 +261,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A cliff with a natural sea-gate arch on the southern tip of Ambon Island — the backdrop almost everyone brings home from Ambon.",
     image: withAlt(
       pintuKotaID.image,
-      "Coastal rock cliff with a natural gate-like arch facing the sea",
+      "The holed rock cliff of Pintu Kota Beach facing the sea, Airlouw, Ambon Island",
     ),
   },
   {
@@ -328,7 +305,7 @@ export const malukuDestinationsEN: Destination[] = [
       "A small island off western Seram, linked to the mainland by a long wooden bridge over clear shallow water — a walk across the sea before you arrive.",
     image: withAlt(
       osiID.image,
-      "A long wooden bridge stretching over clear water toward a palm-lined beach",
+      "Wooden bridge and stilt houses over the clear sea of Osi Island, West Seram",
     ),
   },
 ];
@@ -426,7 +403,7 @@ export const faqsEN: Faq[] = [
   {
     question: "What can I do at Shafira Resort and nearby?",
     answer:
-      "At the resort: swim in clear water, paddle the free-use boat, snorkel right off the beach, grill fish with the cooking kit provided, or simply settle into a gazebo. Nearby are the famous Lubang Buaya snorkeling spot (± 10 minutes), the Air Belanda spring, the hilltop Kapahaha Fortress, and the white sands of Liang Beach (Hunimua).",
+      "At the resort: swim in clear water, paddle the free-use boat, snorkel right off the beach, grill fish with the cooking kit provided, or simply settle into a gazebo. Nearby are the famous Lubang Buaya snorkeling spot (± 10 minutes) and the white sands of Liang Beach (Hunimua).",
   },
   {
     question: "Is there internet at the resort?",
