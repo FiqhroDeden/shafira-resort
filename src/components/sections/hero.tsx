@@ -19,28 +19,37 @@ export function Hero({ locale = "id" }: { locale?: Locale }) {
           sizes="100vw"
           className="object-cover"
         />
-        {/* Overlay agar teks di atas foto selalu kontras */}
+        {/* Overlay agar teks kontras tanpa menggelapkan seluruh foto:
+            atas untuk navigasi, bawah + kiri untuk area teks */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/20 to-ink/75"
+          className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/20 via-20% to-transparent to-35%"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/50 via-45% to-transparent to-80%"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 hidden bg-gradient-to-r from-ink/70 via-ink/30 via-45% to-transparent to-70% md:block"
         />
 
         <div className="absolute inset-x-0 bottom-0 pb-28 md:pb-36">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <Reveal>
-              <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-ivory/80 md:text-xs">
+              <p className="mb-4 hero-text-shadow text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-ivory md:text-xs">
                 {t.eyebrow}
               </p>
             </Reveal>
             <Reveal delay={0.12}>
-              <h1 className="max-w-3xl font-display text-4xl leading-[1.08] text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="hero-text-shadow max-w-3xl font-display text-4xl leading-[1.08] text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
                 {t.h1pre}
-                <em className="text-sunset">{t.h1em}</em>
+                <em className="text-sunset-light">{t.h1em}</em>
                 {t.h1post}
               </h1>
             </Reveal>
             <Reveal delay={0.24}>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-ivory/85 md:text-lg">
+              <p className="hero-text-shadow mt-5 max-w-xl text-base leading-relaxed text-ivory md:text-lg">
                 {t.sub}
               </p>
             </Reveal>
