@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // Generate / edit images via Cloudflare AI (default model: openai/gpt-image-2.5-flare).
 //
-// Env:   CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN (token needs "Workers AI: Read/Edit")
+// Env:   CLOUDFLARE_ACCOUNT_ID, plus CLOUDFLARE_API_TOKEN (token needs "Workers AI: Read/Edit").
+//        The token may instead be a network secret that injects the Authorization header
+//        for api.cloudflare.com, in which case CLOUDFLARE_API_TOKEN can be left unset.
 // Usage: node scripts/generate-image.mjs --prompt "..." --out public/photos/x.jpg
 //        [--size 1024x1024|1024x1536|1536x1024|auto]
 //        [--quality low|medium|high|xhigh|max|auto]
@@ -26,7 +28,7 @@ const { values: args } = parseArgs({
 });
 
 const { CLOUDFLARE_ACCOUNT_ID: accountId, CLOUDFLARE_API_TOKEN: token } = process.env;
-if (!accountId || !token) fail("Set CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN.");
+if (!accountId) fail("Set CLOUDFLARE_ACCOUNT_ID.");
 if (!args.prompt) fail('Missing --prompt "..."');
 
 const out = args.out || `generated/image-${Date.now()}.jpg`;
@@ -50,7 +52,7 @@ if (images.length) input.images = images;
 console.error(`→ ${args.model} (${args.size}, ${args.quality}${images.length ? `, ${images.length} input image(s)` : ""})`);
 const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run`, {
   method: "POST",
-  headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+  headers: { ...(token && { Authorization: `Bearer ${token}` }), "Content-Type": "application/json" },
   body: JSON.stringify({ model: args.model, input }),
 });
 const text = await res.text();

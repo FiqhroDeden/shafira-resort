@@ -17,8 +17,10 @@ node scripts/generate-image.mjs \
   [--image existing.jpg]   # repeatable (max 16) → edit/reference mode
 ```
 
-- Needs `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` in the environment. If they are
-  missing, stop and tell the user to add them as environment secrets — never ask them to paste
+- Needs `CLOUDFLARE_ACCOUNT_ID` as an environment variable. The API token is either
+  `CLOUDFLARE_API_TOKEN` or a network secret that injects `Authorization: Bearer …` for
+  `api.cloudflare.com` (then the env var is not needed). If credentials are missing (error
+  "Set CLOUDFLARE_ACCOUNT_ID", or HTTP 401/403), stop and tell the user to add them as environment secrets — never ask them to paste
   the token into chat or commit it.
 - Output format follows the `--out` extension (`.jpg`, `.png`, `.webp`). Defaults: `1536x1024`, `high`.
 - Use `--quality low` for quick drafts, then re-run the chosen prompt at `high`.
