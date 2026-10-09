@@ -54,8 +54,11 @@ export const accommodationsEN: Accommodation[] = [
     tagline: "For families & groups",
     description:
       "The most spacious stay at Shafira Resort. A timber villa facing the sea with a generous shared living space — room enough for an extended-family weekend away from Ambon, or a group that wants to cook and grill right by the beach.",
-    capacity: "Up to 8 guests · 2 large bedrooms · private gazebo",
+    capacity: "2 large bedrooms (sleep 8) · private area · tents welcome",
     features: [
+      "Private area reserved for villa guests",
+      "Pitch your own tents around the villa — big groups aren't capped at 8",
+      "Private gazebo",
       "Terrace facing the open sea",
       "Fan-cooled bedrooms (no air conditioning)",
       "Spacious living room for gathering",
@@ -390,7 +393,7 @@ export const faqsEN: Faq[] = [
   {
     question: "How much does it cost to stay at Shafira Resort?",
     answer:
-      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms plus a private gazebo), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
+      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms sleeping 8, a private gazebo and area, and room to pitch your own tents for bigger groups), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
   },
   {
     question: "How do I book a room at Shafira Resort?",
