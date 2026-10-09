@@ -57,7 +57,7 @@ export const accommodationsEN: Accommodation[] = [
     capacity: "2 large bedrooms (sleep 8) · private area · tents welcome",
     features: [
       "Private area reserved for villa guests",
-      "Pitch your own tents around the villa — big groups aren't capped at 8",
+      "Bring and pitch your own tents around the villa at no extra cost — big groups aren't capped at 8",
       "Private gazebo",
       "Terrace facing the open sea",
       "Fan-cooled bedrooms (no air conditioning)",
@@ -393,7 +393,7 @@ export const faqsEN: Faq[] = [
   {
     question: "How much does it cost to stay at Shafira Resort?",
     answer:
-      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms sleeping 8, a private gazebo and area, and room to pitch your own tents for bigger groups), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
+      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms sleeping 8, a private gazebo and area, and room to pitch your own tents at no extra cost for bigger groups), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
   },
   {
     question: "How do I book a room at Shafira Resort?",

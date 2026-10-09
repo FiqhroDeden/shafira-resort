@@ -112,7 +112,7 @@ export const accommodations: Accommodation[] = [
     capacity: "2 kamar besar (muat 8 orang) · area privat · boleh dirikan tenda",
     features: [
       "Area privat khusus penyewa vila",
-      "Boleh mendirikan tenda pribadi di sekitar vila — rombongan besar tidak dibatasi 8 orang",
+      "Boleh mendirikan tenda bawaan sendiri di sekitar vila, tanpa biaya tambahan — rombongan besar tidak dibatasi 8 orang",
       "Gazebo privat",
       "Teras menghadap langsung ke laut",
       "Kamar berkipas angin (tanpa AC)",
@@ -492,7 +492,7 @@ export const faqs: Faq[] = [
   {
     question: "Berapa harga menginap di Shafira Resort?",
     answer:
-      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar muat 8 orang, gazebo dan area privat, serta boleh mendirikan tenda sendiri untuk rombongan yang lebih besar), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
+      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar muat 8 orang, gazebo dan area privat, serta boleh mendirikan tenda bawaan sendiri tanpa biaya tambahan untuk rombongan yang lebih besar), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
   },
   {
     question: "Bagaimana cara memesan kamar di Shafira Resort?",
