@@ -232,7 +232,7 @@ export const destinationsEN: Destination[] = [
       "The resort's home beach and its best sunset stage. Come late afternoon, the sky over the sea turns orange — take a gazebo seat and watch.",
     image: withAlt(
       memitID.image,
-      "Orange sunset behind the pier and gazebo at Memit Beach, Shafira Resort Morella",
+      "Orange evening sky over the sea at Memit Beach, seen from the Shafira Resort shoreline in Morella",
     ),
   },
 ];
