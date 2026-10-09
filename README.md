@@ -35,3 +35,15 @@ npm run build # verifikasi build produksi
 
 Foto sementara dari [Pexels](https://www.pexels.com) — tautan sumber ada di
 kolom `credit` pada `src/data/site.ts`, siap diganti foto asli resort.
+
+## Generate gambar AI (Cloudflare GPT Image 2.5 Flare)
+
+```bash
+export CLOUDFLARE_ACCOUNT_ID=...   # Dashboard Cloudflare → Account home → Account ID
+export CLOUDFLARE_API_TOKEN=...    # My Profile → API Tokens → izin "Workers AI"
+npm run image -- --prompt "Vila kayu di tepi Pantai Memit saat senja" --out generated/vila.jpg
+```
+
+Opsi: `--size 1536x1024|1024x1536|1024x1024`, `--quality low…max`,
+`--image input.jpg` (mode edit). Di Claude Code cukup minta "buatkan gambar …" —
+skill `.claude/skills/generate-image` akan memakai skrip ini.

@@ -35,7 +35,7 @@ export type Accommodation = {
   price: number;
   tagline: string;
   description: string;
-  /** TODO: kapasitas masih asumsi — mohon dikoreksi pemilik */
+  /** Kapasitas tamu — sudah dikonfirmasi pemilik */
   capacity: string;
   features: string[];
   image: SiteImage;
@@ -108,10 +108,14 @@ export const accommodations: Accommodation[] = [
     tagline: "Untuk keluarga & rombongan",
     description:
       "Unit paling lega di Shafira Resort. Vila kayu berdiri menghadap laut dengan ruang berkumpul yang luas — cukup untuk keluarga besar yang datang dari Ambon untuk berakhir pekan, atau rombongan yang ingin masak dan bakar-bakar sendiri di tepi pantai.",
-    // 2 kamar besar + 1 gazebo besar (sumber: situs lama resort); jumlah tamu masih asumsi
-    capacity: "Hingga 8 tamu · 2 kamar besar · gazebo privat",
+    // 2 kamar muat 8 orang; penyewa boleh berkemah di area privat vila, jadi rombongan tidak dibatasi 8 orang (dikonfirmasi pemilik)
+    capacity: "2 kamar besar (muat 8 orang) · area privat · boleh dirikan tenda",
     features: [
+      "Area privat khusus penyewa vila",
+      "Boleh mendirikan tenda bawaan sendiri di sekitar vila, tanpa biaya tambahan — rombongan besar tidak dibatasi 8 orang",
+      "Gazebo privat",
       "Teras menghadap langsung ke laut",
+      "Kamar berkipas angin (tanpa AC)",
       "Ruang keluarga luas untuk berkumpul",
       "Akses dapur bersama + peralatan masak lengkap",
       "Prioritas pemakaian perahu resort",
@@ -152,9 +156,9 @@ export const accommodations: Accommodation[] = [
     tagline: "Untuk pasangan & tamu berdua",
     description:
       "Kamar yang hangat dan sederhana untuk dua orang — cukup dekat ke bibir pantai untuk mendengar ombak dari tempat tidur. Pas untuk pasangan yang ingin menghabiskan sore di gazebo dan menutup hari dengan sunset Pantai Memit.",
-    // TODO: asumsi — konfirmasi kapasitas & fasilitas kamar mandi
-    capacity: "2 tamu · 1 ranjang besar",
+    capacity: "2 tamu · 1 ranjang besar · AC",
     features: [
+      "Kamar ber-AC",
       "Beberapa langkah ke bibir pantai",
       "Kamar mandi dalam",
       "Teras kecil untuk duduk sore",
@@ -195,8 +199,7 @@ export const accommodations: Accommodation[] = [
     tagline: "Tidur paling dekat dengan pantai",
     description:
       "Tenda glamping berdiri di antara pohon kelapa, hanya beberapa meter dari pasir. Pilihan paling hemat untuk merasakan tidur diiringi suara ombak — bangun pagi, buka tenda, dan laut Morella sudah di depan mata.",
-    // TODO: asumsi — konfirmasi kapasitas & kelengkapan tenda
-    capacity: "2–3 tamu · kasur + kipas",
+    capacity: "Hingga 6 tamu · kasur + kipas",
     features: [
       "Lokasi paling dekat ke pasir pantai",
       "Kasur nyaman di dalam tenda",
@@ -489,7 +492,7 @@ export const faqs: Faq[] = [
   {
     question: "Berapa harga menginap di Shafira Resort?",
     answer:
-      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar plus gazebo privat), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
+      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar muat 8 orang, gazebo dan area privat, serta boleh mendirikan tenda bawaan sendiri tanpa biaya tambahan untuk rombongan yang lebih besar), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
   },
   {
     question: "Bagaimana cara memesan kamar di Shafira Resort?",
