@@ -93,7 +93,7 @@ export const site = {
   /* URL kanonik listing Google Business Profile (CID) — bukan link pendek maps.app.goo.gl */
   mapsUrl: "https://maps.google.com/?cid=2620478417594744263",
   plusCode: "F6QM+6QG",
-  priceRange: "Rp350.000–Rp1.500.000",
+  priceRange: "Rp350.000–Rp3.500.000",
 } as const;
 
 /* ------------------------------------------------------------ */
@@ -235,6 +235,49 @@ export const accommodations: Accommodation[] = [
       {
         src: "/photos/glamping/galeri-5.jpg",
         alt: "Teras tenda glamping Shafira Resort dengan dua kursi santai dan keset di depan pintu tenda",
+        credit: "Foto asli Shafira Resort",
+      },
+    ],
+  },
+  {
+    slug: "seluruh-unit",
+    name: "Seluruh Unit",
+    price: 3_500_000,
+    tagline: "Sewa eksklusif satu resort",
+    description:
+      "Seluruh akomodasi Shafira Resort untuk satu rombongan — Vila Besar, semua Kamar, dan semua tenda Glamping. Tidak ada tamu menginap lain selama Anda menyewa, jadi pantai, gazebo, dan perahu terasa milik sendiri. Pas untuk reuni keluarga besar, gathering kantor, atau acara komunitas.",
+    // Dikonfirmasi pemilik: termasuk Vila + semua Kamar + semua Glamping, eksklusif, tamu tidak dibatasi (boleh bawa tenda)
+    capacity: "Vila Besar + semua Kamar + semua Glamping · eksklusif · boleh bawa tenda",
+    features: [
+      "Seluruh resort eksklusif untuk rombongan Anda",
+      "Vila Besar, semua Kamar ber-AC, dan semua tenda Glamping",
+      "Jumlah tamu tidak dibatasi — boleh mendirikan tenda bawaan sendiri tanpa biaya tambahan",
+      "Bebas memakai perahu, gazebo, dapur, dan internet Starlink",
+    ],
+    image: {
+      src: "/photos/hero-pantai-memit-shafira-resort.jpg",
+      alt: "Area Shafira Resort di tepi Pantai Memit Morella dilihat dari laut — seluruh unit bisa disewa eksklusif",
+      credit: "Foto asli Shafira Resort",
+    },
+    gallery: [
+      {
+        src: "/photos/vila-besar-shafira-resort.jpg",
+        alt: "Vila Besar Shafira Resort dengan teras berlampu hangat di malam hari",
+        credit: "Foto asli Shafira Resort (Instagram @resortsafiramemit)",
+      },
+      {
+        src: "/photos/kamar/utama.jpg",
+        alt: "Teras kamar Shafira Resort dengan kursi rotan",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/glamping/utama.jpg",
+        alt: "Tenda glamping Shafira Resort dengan kasur dan kursi santai",
+        credit: "Foto asli Shafira Resort",
+      },
+      {
+        src: "/photos/vila/galeri-3.jpg",
+        alt: "Gazebo tepi laut Shafira Resort di Pantai Memit Morella",
         credit: "Foto asli Shafira Resort",
       },
     ],
@@ -492,7 +535,7 @@ export const faqs: Faq[] = [
   {
     question: "Berapa harga menginap di Shafira Resort?",
     answer:
-      "Ada tiga pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar muat 8 orang, gazebo dan area privat, serta boleh mendirikan tenda bawaan sendiri tanpa biaya tambahan untuk rombongan yang lebih besar), Kamar Rp500.000 per malam untuk berdua, dan tenda Glamping Rp350.000 per malam tepat di tepi pantai. Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
+      "Ada empat pilihan menginap: Vila Besar Rp1.500.000 per malam untuk keluarga atau rombongan (dua kamar besar muat 8 orang, gazebo dan area privat, serta boleh mendirikan tenda bawaan sendiri tanpa biaya tambahan untuk rombongan yang lebih besar), Kamar Rp500.000 per malam untuk berdua, tenda Glamping Rp350.000 per malam tepat di tepi pantai, dan Seluruh Unit Rp3.500.000 per malam untuk menyewa seluruh resort secara eksklusif (Vila Besar, semua Kamar, dan semua Glamping). Semua tamu bebas memakai perahu, gazebo, peralatan masak, dan internet Starlink tanpa biaya tambahan.",
   },
   {
     question: "Bagaimana cara memesan kamar di Shafira Resort?",

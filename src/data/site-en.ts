@@ -42,7 +42,7 @@ export const siteEN = {
 
 /* Nama unit versi Inggris; waLabel menyertakan nama asli agar
    pemilik resort langsung mengenali unit yang dimaksud tamu. */
-const [vilaID, kamarID, glampingID] = accommodations;
+const [vilaID, kamarID, glampingID, wholeID] = accommodations;
 
 const withAlt = (img: SiteImage, alt: string): SiteImage => ({ ...img, alt });
 
@@ -166,6 +166,31 @@ export const accommodationsEN: Accommodation[] = [
         glampingID.gallery[4],
         "Glamping tent porch at Shafira Resort with two lounge chairs and a doormat at the entrance",
       ),
+    ],
+  },
+  {
+    ...wholeID,
+    name: "Whole Resort",
+    waLabel: "Whole Resort (Seluruh Unit)",
+    tagline: "Exclusive use of the entire resort",
+    description:
+      "Every place to stay at Shafira Resort for one group — the Grand Villa, all Double Rooms, and all glamping tents. No other overnight guests while you're here, so the beach, gazebos, and boat feel like your own. Made for big family reunions, company retreats, or community events.",
+    capacity: "Grand Villa + all Rooms + all Glamping · exclusive · tents welcome",
+    features: [
+      "The whole resort, exclusively for your group",
+      "Grand Villa, all air-conditioned Rooms, and all glamping tents",
+      "No guest cap — pitch your own tents at no extra cost",
+      "Free use of the boat, gazebos, kitchen, and Starlink internet",
+    ],
+    image: withAlt(
+      wholeID.image,
+      "Shafira Resort on Memit Beach, Morella, seen from the water — the whole resort can be booked exclusively",
+    ),
+    gallery: [
+      withAlt(wholeID.gallery[0], "Shafira Resort's Grand Villa with a warmly lit veranda at night"),
+      withAlt(wholeID.gallery[1], "Room terrace at Shafira Resort with rattan chairs"),
+      withAlt(wholeID.gallery[2], "Glamping tent at Shafira Resort with a mattress and lounge chairs"),
+      withAlt(wholeID.gallery[3], "Seaside gazebo at Shafira Resort on Memit Beach, Morella"),
     ],
   },
 ];
@@ -393,7 +418,7 @@ export const faqsEN: Faq[] = [
   {
     question: "How much does it cost to stay at Shafira Resort?",
     answer:
-      "There are three ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms sleeping 8, a private gazebo and area, and room to pitch your own tents at no extra cost for bigger groups), the Double Room at Rp500,000 per night for two, and Beach Glamping tents at Rp350,000 per night right on the sand. All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
+      "There are four ways to stay: the Grand Villa at Rp1,500,000 per night for families or groups (two large bedrooms sleeping 8, a private gazebo and area, and room to pitch your own tents at no extra cost for bigger groups), the Double Room at Rp500,000 per night for two, Beach Glamping tents at Rp350,000 per night right on the sand, and the Whole Resort at Rp3,500,000 per night for exclusive use of everything (Grand Villa, all Rooms, and all Glamping). All guests get free use of the boat, gazebos, cooking equipment, and Starlink internet.",
   },
   {
     question: "How do I book a room at Shafira Resort?",

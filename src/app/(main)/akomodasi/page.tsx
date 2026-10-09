@@ -4,7 +4,7 @@ import { RoomsPage } from "@/components/rooms-page";
 export const metadata: Metadata = {
   title: "Akomodasi & Harga",
   description:
-    "Pilihan menginap di Shafira Resort, Pantai Memit Morella: Vila Besar Rp1.500.000/malam, Kamar Rp500.000/malam, dan Glamping Rp350.000/malam. Pesan langsung via WhatsApp.",
+    "Pilihan menginap di Shafira Resort, Pantai Memit Morella: Vila Besar Rp1.500.000/malam, Kamar Rp500.000/malam, Glamping Rp350.000/malam, dan Seluruh Unit (sewa eksklusif) Rp3.500.000/malam. Pesan langsung via WhatsApp.",
   alternates: {
     canonical: "/akomodasi",
     languages: {

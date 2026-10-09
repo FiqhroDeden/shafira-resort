@@ -4,7 +4,7 @@ import { RoomsPage } from "@/components/rooms-page";
 export const metadata: Metadata = {
   title: "Rooms & Rates",
   description:
-    "Ways to stay at Shafira Resort on Memit Beach, Morella: Grand Villa Rp1,500,000/night, Double Room Rp500,000/night, and Beach Glamping Rp350,000/night. Book directly via WhatsApp.",
+    "Ways to stay at Shafira Resort on Memit Beach, Morella: Grand Villa Rp1,500,000/night, Double Room Rp500,000/night, Beach Glamping Rp350,000/night, and the Whole Resort (exclusive) Rp3,500,000/night. Book directly via WhatsApp.",
   alternates: {
     canonical: "/en/accommodation",
     languages: {
