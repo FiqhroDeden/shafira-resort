@@ -57,6 +57,7 @@ export const accommodationsEN: Accommodation[] = [
     capacity: "Up to 8 guests · 2 large bedrooms · private gazebo",
     features: [
       "Terrace facing the open sea",
+      "Fan-cooled bedrooms (no air conditioning)",
       "Spacious living room for gathering",
       "Shared kitchen with full cooking kit",
       "Priority use of the resort boat",
@@ -92,8 +93,9 @@ export const accommodationsEN: Accommodation[] = [
     tagline: "For couples",
     description:
       "A warm, simple room for two — close enough to the waterline to hear the waves from bed. Made for couples after slow afternoons in a gazebo and a Memit Beach sunset to close the day.",
-    capacity: "2 guests · 1 double bed",
+    capacity: "2 guests · 1 double bed · air conditioning",
     features: [
+      "Air-conditioned room",
       "Steps from the waterline",
       "Private bathroom",
       "Small terrace for the late afternoon",
@@ -129,7 +131,7 @@ export const accommodationsEN: Accommodation[] = [
     tagline: "The closest bed to the sand",
     description:
       "Glamping tents stand among the coconut palms, just a few steps from the sand. The most affordable way to fall asleep to the sound of waves — unzip the tent in the morning and the Morella sea is right there.",
-    capacity: "2–3 guests · mattress + fan",
+    capacity: "Up to 6 guests · mattress + fan",
     features: [
       "The closest spot to the sand",
       "Comfortable mattress inside the tent",

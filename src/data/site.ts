@@ -112,6 +112,7 @@ export const accommodations: Accommodation[] = [
     capacity: "Hingga 8 tamu · 2 kamar besar · gazebo privat",
     features: [
       "Teras menghadap langsung ke laut",
+      "Kamar berkipas angin (tanpa AC)",
       "Ruang keluarga luas untuk berkumpul",
       "Akses dapur bersama + peralatan masak lengkap",
       "Prioritas pemakaian perahu resort",
@@ -152,9 +153,9 @@ export const accommodations: Accommodation[] = [
     tagline: "Untuk pasangan & tamu berdua",
     description:
       "Kamar yang hangat dan sederhana untuk dua orang — cukup dekat ke bibir pantai untuk mendengar ombak dari tempat tidur. Pas untuk pasangan yang ingin menghabiskan sore di gazebo dan menutup hari dengan sunset Pantai Memit.",
-    // TODO: asumsi — konfirmasi kapasitas & fasilitas kamar mandi
-    capacity: "2 tamu · 1 ranjang besar",
+    capacity: "2 tamu · 1 ranjang besar · AC",
     features: [
+      "Kamar ber-AC",
       "Beberapa langkah ke bibir pantai",
       "Kamar mandi dalam",
       "Teras kecil untuk duduk sore",
@@ -195,8 +196,7 @@ export const accommodations: Accommodation[] = [
     tagline: "Tidur paling dekat dengan pantai",
     description:
       "Tenda glamping berdiri di antara pohon kelapa, hanya beberapa meter dari pasir. Pilihan paling hemat untuk merasakan tidur diiringi suara ombak — bangun pagi, buka tenda, dan laut Morella sudah di depan mata.",
-    // TODO: asumsi — konfirmasi kapasitas & kelengkapan tenda
-    capacity: "2–3 tamu · kasur + kipas",
+    capacity: "Hingga 6 tamu · kasur + kipas",
     features: [
       "Lokasi paling dekat ke pasir pantai",
       "Kasur nyaman di dalam tenda",
