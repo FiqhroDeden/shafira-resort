@@ -35,7 +35,7 @@ export type Accommodation = {
   price: number;
   tagline: string;
   description: string;
-  /** TODO: kapasitas masih asumsi — mohon dikoreksi pemilik */
+  /** Kapasitas tamu — sudah dikonfirmasi pemilik */
   capacity: string;
   features: string[];
   image: SiteImage;
@@ -108,7 +108,7 @@ export const accommodations: Accommodation[] = [
     tagline: "Untuk keluarga & rombongan",
     description:
       "Unit paling lega di Shafira Resort. Vila kayu berdiri menghadap laut dengan ruang berkumpul yang luas — cukup untuk keluarga besar yang datang dari Ambon untuk berakhir pekan, atau rombongan yang ingin masak dan bakar-bakar sendiri di tepi pantai.",
-    // 2 kamar besar + 1 gazebo besar (sumber: situs lama resort); jumlah tamu masih asumsi
+    // 2 kamar besar + 1 gazebo besar (sumber: situs lama resort); hingga 8 tamu dikonfirmasi pemilik
     capacity: "Hingga 8 tamu · 2 kamar besar · gazebo privat",
     features: [
       "Teras menghadap langsung ke laut",
