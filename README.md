@@ -11,7 +11,7 @@ Maluku Tengah.
 - Next.js 15 (App Router, SSG penuh — tanpa backend/database)
 - Tailwind CSS v4, font Fraunces + Albert Sans via `next/font`
 - Ikon line dari `lucide-react`
-- Semua pemesanan diarahkan ke WhatsApp `wa.me/6282239767944`
+- Semua pemesanan diarahkan ke WhatsApp `wa.me/6285242087190`
 
 ## Mengubah konten
 
