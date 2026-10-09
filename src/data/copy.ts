@@ -44,7 +44,7 @@ export const copy = {
     },
     rooms: {
       eyebrow: "Akomodasi & Harga",
-      heading: "Tiga cara menginap di tepi Memit",
+      heading: "Empat cara menginap di tepi Memit",
       viewAll: "Lihat detail semua unit",
       premiumBadge: "Unit premium",
       perNight: "/ malam",
@@ -163,7 +163,7 @@ export const copy = {
     roomsPage: {
       eyebrow: "Akomodasi & Harga",
       heading: "Pilih cara Anda menginap di tepi Memit",
-      sub: "Tiga tipe unit dengan harga yang jelas — semuanya beberapa langkah dari air. Pesan langsung ke pemilik lewat WhatsApp, tanpa perantara dan tanpa biaya tambahan.",
+      sub: "Empat pilihan menginap dengan harga yang jelas — semuanya beberapa langkah dari air. Pesan langsung ke pemilik lewat WhatsApp, tanpa perantara dan tanpa biaya tambahan.",
       bookUnit: "Pesan",
       composeEyebrow: "Susun Pesan Anda",
       composeHeading: "Sudah menentukan pilihan?",
@@ -210,7 +210,7 @@ export const copy = {
     },
     rooms: {
       eyebrow: "Rooms & Rates",
-      heading: "Three ways to stay by Memit Beach",
+      heading: "Four ways to stay by Memit Beach",
       viewAll: "View all room details",
       premiumBadge: "Premium unit",
       perNight: "/ night",
@@ -329,7 +329,7 @@ export const copy = {
     roomsPage: {
       eyebrow: "Rooms & Rates",
       heading: "Choose how you stay by Memit Beach",
-      sub: "Three room types with clear prices — all of them steps from the water. Book directly with the owner over WhatsApp, with no middlemen and no extra fees.",
+      sub: "Four ways to stay with clear prices — all of them steps from the water. Book directly with the owner over WhatsApp, with no middlemen and no extra fees.",
       bookUnit: "Book the",
       composeEyebrow: "Compose Your Message",
       composeHeading: "Made your choice?",

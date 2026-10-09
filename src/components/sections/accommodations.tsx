@@ -93,8 +93,8 @@ export function Accommodations({ locale = "id" }: { locale?: Locale }) {
           </article>
         </Reveal>
 
-        {/* Dua unit lainnya */}
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        {/* Unit lainnya */}
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {rest.map((unit, i) => (
             <Reveal key={unit.slug} delay={i * 0.12}>
               <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-ivory">
