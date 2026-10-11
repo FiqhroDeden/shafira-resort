@@ -1,0 +1,5 @@
+assets/footage/
+assets/audio/musik-*.wav
+snapshots/
+.hyperframes/
+__pycache__/
